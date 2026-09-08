@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #ece7de;
+  --color-paper-alt: #e1daca;
+  --color-ink: #17160f;
+  --color-ink-2: #0e0d08;
+  --color-graphite: #55524a;
+  --color-ember: #ff4b1f;
+  --color-ember-dark: #d93c15;
+  --color-rope: #e4ae23;
+  --color-line: rgba(23, 22, 15, 0.14);
+  --color-line-ink: rgba(236, 231, 222, 0.16);
+
+  --font-display: var(--font-big-shoulders), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-prose: var(--font-plex-serif), Georgia, serif;
+
+  --radius-panel: 2px;
+}
+
+:root {
+  /* Do sistema de página larga. O app é uma coluna de telefone (max-w-lg), então as
+     telas ficam no passo fixo de 20 px; estes esperam a primeira tela larga. */
+  --container: 1180px;
+  --pad-inline: clamp(20px, 5vw, 64px);
+  --pad-section: clamp(64px, 9vw, 120px);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  background: var(--color-paper);
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+/* Títulos e números grandes: a condensada, que é onde a página tem voz. */
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: 0.005em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Rótulo de bloco: mono em caixa alta, do jeito que se lê numa ficha. */
+.rotulo {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+/* Números de aula, durações e contagens: mono, para alinharem em coluna. */
+.tnum {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* A voz do coach, a serifa da mesma família do corpo. */
+.prose-coach {
+  font-family: var(--font-prose);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: #3a382f;
+}
+
+.prose-coach p + p {
+  margin-top: 1em;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+::selection {
+  background: var(--color-ember);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "fundacao-e-avaliacao",
+    "title": "Fundação e avaliação",
+    "subtitle": "Padrões primários, peso corporal, estabelecer referências",
+    "position": 1
+  },
+  {
+    "slug": "capacidade-de-trabalho",
+    "title": "Capacidade de trabalho",
+    "subtitle": "Densidade, base aeróbia, tolerar volume",
+    "position": 2
+  },
+  {
+    "slug": "forca-de-base",
+    "title": "Força de base",
+    "subtitle": "Padrões carregados, progressão dupla",
+    "position": 3
+  },
+  {
+    "slug": "potencia-e-ciclo",
+    "title": "Potência e ciclo",
+    "subtitle": "Movimentos explosivos, EMOM, taxa de força",
+    "position": 4
+  },
+  {
+    "slug": "resistencia-muscular",
+    "title": "Resistência muscular",
+    "subtitle": "Séries longas, wall balls, ergómetros",
+    "position": 5
+  },
+  {
+    "slug": "forca-especifica",
+    "title": "Força específica",
+    "subtitle": "Trenó, transportes, unilateral pesado",
+    "position": 6
+  },
+  {
+    "slug": "tolerancia-glicolitica",
+    "title": "Tolerância glicolítica",
+    "subtitle": "Intervalos, tampão de lactato, MLSS",
+    "position": 7
+  },
+  {
+    "slug": "hibrido-corrida-estacao",
+    "title": "Híbrido corrida↔estação",
+    "subtitle": "Transições, compromisso de prova",
+    "position": 8
+  },
+  {
+    "slug": "especificidade-de-prova",
+    "title": "Especificidade de prova",
+    "subtitle": "Formatos e distâncias oficiais",
+    "position": 9
+  },
+  {
+    "slug": "simulacao-e-consolidacao",
+    "title": "Simulação e consolidação",
+    "subtitle": "Chippers, provas completas, reteste",
+    "position": 10
+  }
+]

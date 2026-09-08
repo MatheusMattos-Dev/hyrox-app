@@ -1,0 +1,186 @@
+[
+  {
+    "slug": "agachamento",
+    "name": "Agachamento",
+    "category": "Padrões de força",
+    "gif_url": null,
+    "description": "Calcanhares no chão · curvatura lombar mantida no fundo.",
+    "cues": [
+      "Calcanhares no chão",
+      "curvatura lombar mantida no fundo"
+    ],
+    "common_errors": [
+      "Perda da curvatura lombar na última repetição de cada série. Se acontecer, a série acabou: baixe a carga em 10% na série seguinte."
+    ],
+    "position": 1
+  },
+  {
+    "slug": "levantamento-terra",
+    "name": "Levantamento terra",
+    "category": "Padrões de força",
+    "gif_url": null,
+    "description": "Anca e ombros sobem juntos · barra junto à perna.",
+    "cues": [
+      "Anca e ombros sobem juntos",
+      "barra junto à perna"
+    ],
+    "common_errors": [
+      "Perda da curvatura lombar na última repetição de cada série. Se acontecer, a série acabou: baixe a carga em 10% na série seguinte."
+    ],
+    "position": 2
+  },
+  {
+    "slug": "empurrar-vertical",
+    "name": "Empurrar vertical",
+    "category": "Padrões de força",
+    "gif_url": null,
+    "description": "Sem flexão das pernas no press estrito · lombar não arqueia.",
+    "cues": [
+      "Sem flexão das pernas no press estrito",
+      "lombar não arqueia"
+    ],
+    "common_errors": [
+      "Perda da curvatura lombar na última repetição de cada série. Se acontecer, a série acabou: baixe a carga em 10% na série seguinte."
+    ],
+    "position": 3
+  },
+  {
+    "slug": "puxada",
+    "name": "Puxada",
+    "category": "Padrões de força",
+    "gif_url": null,
+    "description": "Omoplata inicia o movimento · extensão completa em baixo.",
+    "cues": [
+      "Omoplata inicia o movimento",
+      "extensão completa em baixo"
+    ],
+    "common_errors": [
+      "Perda da curvatura lombar na última repetição de cada série. Se acontecer, a série acabou: baixe a carga em 10% na série seguinte.",
+      "Perda de qualidade técnica quando o cronómetro aperta. Neste dia, a técnica manda sobre o tempo."
+    ],
+    "position": 4
+  },
+  {
+    "slug": "unilateral",
+    "name": "Unilateral",
+    "category": "Padrões de força",
+    "gif_url": null,
+    "description": "Joelho alinhado com o segundo dedo · tronco alto.",
+    "cues": [
+      "Joelho alinhado com o segundo dedo",
+      "tronco alto"
+    ],
+    "common_errors": [
+      "No trenó, a anca sobe e o tronco arredonda. Pare a série: a partir daí a carga passa a ser suportada pela lombar."
+    ],
+    "position": 5
+  },
+  {
+    "slug": "levantamento-tecnico",
+    "name": "Levantamento técnico",
+    "category": "Padrões de força",
+    "gif_url": null,
+    "description": "Extensão da anca antes da ação dos braços.",
+    "cues": [
+      "Extensão da anca antes da ação dos braços"
+    ],
+    "common_errors": [
+      "Perda de qualidade técnica quando o cronómetro aperta. Neste dia, a técnica manda sobre o tempo."
+    ],
+    "position": 6
+  },
+  {
+    "slug": "corrida",
+    "name": "Mecânica de corrida",
+    "category": "Corrida e ergómetros",
+    "gif_url": null,
+    "description": "Cadência estável · contacto sob o centro de massa.",
+    "cues": [
+      "Cadência estável",
+      "contacto sob o centro de massa"
+    ],
+    "common_errors": [
+      "Subir de zona sem dar por isso. Se deixar de conseguir falar, abrandou-se o suficiente para o treino deixar de ser o que estava prescrito.",
+      "Atacar o primeiro bloco como se fosse o único. Praticamente todas as falhas nesta sessão nascem nos primeiros três minutos.",
+      "Perda de qualidade técnica quando o cronómetro aperta. Neste dia, a técnica manda sobre o tempo."
+    ],
+    "position": 7
+  },
+  {
+    "slug": "remo-skierg",
+    "name": "Remo e SkiErg",
+    "category": "Corrida e ergómetros",
+    "gif_url": null,
+    "description": "Pernas primeiro, braços por último · retorno mais lento que a puxada.",
+    "cues": [
+      "Pernas primeiro, braços por último",
+      "retorno mais lento que a puxada"
+    ],
+    "common_errors": [
+      "Perda de qualidade técnica quando o cronómetro aperta. Neste dia, a técnica manda sobre o tempo.",
+      "Subir de zona sem dar por isso. Se deixar de conseguir falar, abrandou-se o suficiente para o treino deixar de ser o que estava prescrito."
+    ],
+    "position": 8
+  },
+  {
+    "slug": "treno",
+    "name": "Trenó",
+    "category": "Estações",
+    "gif_url": null,
+    "description": "Corpo em linha do calcanhar à cabeça · passada curta e frequente.",
+    "cues": [
+      "Corpo em linha do calcanhar à cabeça",
+      "passada curta e frequente"
+    ],
+    "common_errors": [
+      "No trenó, a anca sobe e o tronco arredonda. Pare a série: a partir daí a carga passa a ser suportada pela lombar."
+    ],
+    "position": 9
+  },
+  {
+    "slug": "transporte-com-carga",
+    "name": "Transporte com carga",
+    "category": "Estações",
+    "gif_url": null,
+    "description": "Ombros para trás e para baixo · passada curta.",
+    "cues": [
+      "Ombros para trás e para baixo",
+      "passada curta"
+    ],
+    "common_errors": [
+      "No trenó, a anca sobe e o tronco arredonda. Pare a série: a partir daí a carga passa a ser suportada pela lombar."
+    ],
+    "position": 10
+  },
+  {
+    "slug": "wall-ball",
+    "name": "Wall ball",
+    "category": "Estações",
+    "gif_url": null,
+    "description": "Anca abaixo do paralelo · lançamento sincronizado com a extensão.",
+    "cues": [
+      "Anca abaixo do paralelo",
+      "lançamento sincronizado com a extensão"
+    ],
+    "common_errors": [
+      "Atacar o primeiro bloco como se fosse o único. Praticamente todas as falhas nesta sessão nascem nos primeiros três minutos.",
+      "No trenó, a anca sobe e o tronco arredonda. Pare a série: a partir daí a carga passa a ser suportada pela lombar."
+    ],
+    "position": 11
+  },
+  {
+    "slug": "burpee-broad-jump",
+    "name": "Burpee broad jump",
+    "category": "Estações",
+    "gif_url": null,
+    "description": "Receção absorvida com anca e joelho · distância submáxima constante.",
+    "cues": [
+      "Receção absorvida com anca e joelho",
+      "distância submáxima constante"
+    ],
+    "common_errors": [
+      "Perda de qualidade técnica quando o cronómetro aperta. Neste dia, a técnica manda sobre o tempo."
+    ],
+    "position": 12
+  }
+]

@@ -1,0 +1,1502 @@
+[
+ {
+  "lesson": 1,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 2,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 3,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 4,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 5,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 6,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 7,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 8,
+  "movements": [
+   "transporte-com-carga"
+  ]
+ },
+ {
+  "lesson": 9,
+  "movements": [
+   "burpee-broad-jump"
+  ]
+ },
+ {
+  "lesson": 10,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 11,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 12,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 13,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 14,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 15,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 16,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 17,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 18,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 19,
+  "movements": [
+   "levantamento-tecnico"
+  ]
+ },
+ {
+  "lesson": 20,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 21,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 22,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 23,
+  "movements": [
+   "unilateral"
+  ]
+ },
+ {
+  "lesson": 24,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 25,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 26,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 27,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 28,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 29,
+  "movements": [
+   "levantamento-tecnico"
+  ]
+ },
+ {
+  "lesson": 30,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 31,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 32,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 33,
+  "movements": [
+   "unilateral"
+  ]
+ },
+ {
+  "lesson": 34,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 35,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 36,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 37,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 38,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 39,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 40,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 41,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 42,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 43,
+  "movements": [
+   "transporte-com-carga"
+  ]
+ },
+ {
+  "lesson": 44,
+  "movements": [
+   "burpee-broad-jump"
+  ]
+ },
+ {
+  "lesson": 45,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 46,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 47,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 48,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 49,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 50,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 51,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 52,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 53,
+  "movements": [
+   "transporte-com-carga"
+  ]
+ },
+ {
+  "lesson": 54,
+  "movements": [
+   "burpee-broad-jump"
+  ]
+ },
+ {
+  "lesson": 55,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 56,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 57,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 58,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 59,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 60,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 61,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 62,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 63,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 64,
+  "movements": [
+   "levantamento-tecnico"
+  ]
+ },
+ {
+  "lesson": 65,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 66,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 67,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 68,
+  "movements": [
+   "unilateral"
+  ]
+ },
+ {
+  "lesson": 69,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 70,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 71,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 72,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 73,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 74,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 75,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 76,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 77,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 78,
+  "movements": [
+   "unilateral"
+  ]
+ },
+ {
+  "lesson": 79,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 80,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 81,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 82,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 83,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 84,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 85,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 86,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 87,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 88,
+  "movements": [
+   "transporte-com-carga"
+  ]
+ },
+ {
+  "lesson": 89,
+  "movements": [
+   "burpee-broad-jump"
+  ]
+ },
+ {
+  "lesson": 90,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 91,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 92,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 93,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 94,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 95,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 96,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 97,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 98,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 99,
+  "movements": [
+   "levantamento-tecnico"
+  ]
+ },
+ {
+  "lesson": 100,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 101,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 102,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 103,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 104,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 105,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 106,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 107,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 108,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 109,
+  "movements": [
+   "levantamento-tecnico"
+  ]
+ },
+ {
+  "lesson": 110,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 111,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 112,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 113,
+  "movements": [
+   "unilateral"
+  ]
+ },
+ {
+  "lesson": 114,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 115,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 116,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 117,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 118,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 119,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 120,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 121,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 122,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 123,
+  "movements": [
+   "transporte-com-carga"
+  ]
+ },
+ {
+  "lesson": 124,
+  "movements": [
+   "burpee-broad-jump"
+  ]
+ },
+ {
+  "lesson": 125,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 126,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 127,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 128,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 129,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 130,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 131,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 132,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 133,
+  "movements": [
+   "transporte-com-carga"
+  ]
+ },
+ {
+  "lesson": 134,
+  "movements": [
+   "burpee-broad-jump"
+  ]
+ },
+ {
+  "lesson": 135,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 136,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 137,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 138,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 139,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 140,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 141,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 142,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 143,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 144,
+  "movements": [
+   "levantamento-tecnico"
+  ]
+ },
+ {
+  "lesson": 145,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 146,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 147,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 148,
+  "movements": [
+   "unilateral"
+  ]
+ },
+ {
+  "lesson": 149,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 150,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 151,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 152,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 153,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 154,
+  "movements": [
+   "levantamento-tecnico"
+  ]
+ },
+ {
+  "lesson": 155,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 156,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 157,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 158,
+  "movements": [
+   "unilateral"
+  ]
+ },
+ {
+  "lesson": 159,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 160,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 161,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 162,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 163,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 164,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 165,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 166,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 167,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 168,
+  "movements": [
+   "transporte-com-carga"
+  ]
+ },
+ {
+  "lesson": 169,
+  "movements": [
+   "burpee-broad-jump"
+  ]
+ },
+ {
+  "lesson": 170,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 171,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 172,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 173,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 174,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 175,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 176,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 177,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 178,
+  "movements": [
+   "transporte-com-carga"
+  ]
+ },
+ {
+  "lesson": 179,
+  "movements": [
+   "burpee-broad-jump"
+  ]
+ },
+ {
+  "lesson": 180,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 181,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 182,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 183,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 184,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 185,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 186,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 187,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 188,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 189,
+  "movements": [
+   "levantamento-tecnico"
+  ]
+ },
+ {
+  "lesson": 190,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 191,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 192,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 193,
+  "movements": [
+   "unilateral"
+  ]
+ },
+ {
+  "lesson": 194,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 195,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 196,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 197,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 198,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 199,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 200,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 201,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 202,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 203,
+  "movements": [
+   "unilateral"
+  ]
+ },
+ {
+  "lesson": 204,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 205,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 206,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 207,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 208,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 209,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 210,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 211,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 212,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 213,
+  "movements": [
+   "transporte-com-carga"
+  ]
+ },
+ {
+  "lesson": 214,
+  "movements": [
+   "burpee-broad-jump"
+  ]
+ },
+ {
+  "lesson": 215,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 216,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 217,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 218,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 219,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 220,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 221,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 222,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 223,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 224,
+  "movements": [
+   "levantamento-tecnico"
+  ]
+ },
+ {
+  "lesson": 225,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 226,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 227,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 228,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 229,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 230,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 231,
+  "movements": [
+   "levantamento-terra"
+  ]
+ },
+ {
+  "lesson": 232,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 233,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 234,
+  "movements": [
+   "levantamento-tecnico"
+  ]
+ },
+ {
+  "lesson": 235,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 236,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 237,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 238,
+  "movements": [
+   "unilateral"
+  ]
+ },
+ {
+  "lesson": 239,
+  "movements": [
+   "puxada"
+  ]
+ },
+ {
+  "lesson": 240,
+  "movements": [
+   "wall-ball"
+  ]
+ },
+ {
+  "lesson": 241,
+  "movements": [
+   "agachamento"
+  ]
+ },
+ {
+  "lesson": 242,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 243,
+  "movements": [
+   "treno"
+  ]
+ },
+ {
+  "lesson": 244,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 245,
+  "movements": [
+   "corrida"
+  ]
+ },
+ {
+  "lesson": 246,
+  "movements": [
+   "empurrar-vertical"
+  ]
+ },
+ {
+  "lesson": 247,
+  "movements": [
+   "remo-skierg"
+  ]
+ },
+ {
+  "lesson": 248,
+  "movements": [
+   "transporte-com-carga"
+  ]
+ },
+ {
+  "lesson": 249,
+  "movements": [
+   "burpee-broad-jump"
+  ]
+ },
+ {
+  "lesson": 250,
+  "movements": [
+   "wall-ball"
+  ]
+ }
+]
