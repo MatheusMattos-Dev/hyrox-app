@@ -2,20 +2,9 @@
  * O ano inteiro visto como uma volta: 250 aulas fechando o circuito.
  * As dez marcas na pista são os dez mesociclos; o traço laranja é o quanto já andou.
  */
-export function Circuito({
-  completed,
-  total,
-  sobreEscuro = false,
-}: {
-  completed: number;
-  total: number;
-  sobreEscuro?: boolean;
-}) {
+export function Circuito({ completed, total }: { completed: number; total: number }) {
   const razao = total > 0 ? Math.min(1, completed / total) : 0;
   const percentagem = Math.round(razao * 100);
-  const pista = sobreEscuro ? "var(--color-line-ink)" : "var(--color-line)";
-  const marca = sobreEscuro ? "var(--color-paper)" : "var(--color-ink)";
-  const partida = sobreEscuro ? "var(--color-paper)" : "var(--color-ink)";
 
   return (
     <svg
@@ -24,14 +13,14 @@ export function Circuito({
       role="img"
       aria-label={`${completed} de ${total} aulas concluídas, ${percentagem}% do percurso`}
     >
-      <path d={PISTA} pathLength={1} fill="none" stroke={pista} strokeWidth="1.5" />
+      <path d={PISTA} pathLength={1} fill="none" stroke="var(--color-line)" strokeWidth="1.5" />
 
       {/* Uma marca por mesociclo, a cada cinco semanas. */}
       <path
         d={PISTA}
         pathLength={1}
         fill="none"
-        stroke={marca}
+        stroke="var(--color-ink)"
         strokeOpacity="0.3"
         strokeWidth="9"
         strokeDasharray="0.003 0.097"
@@ -49,7 +38,7 @@ export function Circuito({
       ) : null}
 
       {/* Linha de partida, no topo. */}
-      <rect x="148.5" y="1" width="3" height="10" fill={partida} />
+      <rect x="148.5" y="1" width="3" height="10" fill="var(--color-ink)" />
     </svg>
   );
 }

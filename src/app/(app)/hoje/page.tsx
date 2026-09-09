@@ -22,7 +22,7 @@ export default async function TodayPage() {
   return (
     <main className="px-5 pt-10">
       <header className="flex items-baseline justify-between">
-        <span className="rotulo text-[11px] text-ember">Master Class</span>
+        <span className="rotulo text-[11px] text-ink">Master Class</span>
         <Link href="/perfil" className="text-[13px] font-semibold text-graphite">
           {firstName}
         </Link>
@@ -66,7 +66,7 @@ export default async function TodayPage() {
             {current.module ? (
               <span className="mt-3 block text-[13px] text-paper/55">{current.module.title}</span>
             ) : null}
-            <span className="rotulo mt-5 inline-block bg-ember px-4 py-2 text-[12px] text-paper">
+            <span className="rotulo mt-5 inline-block bg-ember px-4 py-2 text-[12px] text-ink">
               Abrir aula
             </span>
           </Link>

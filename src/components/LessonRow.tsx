@@ -23,7 +23,7 @@ export function LessonRow({ lesson, showModule = false }: { lesson: LessonWithSt
       >
         <span
           className={`tnum mt-0.5 w-11 shrink-0 py-1 text-center text-[14px] font-semibold ${
-            lesson.completed ? "bg-ember text-paper" : "text-graphite"
+            lesson.completed ? "bg-ember text-ink" : "text-graphite"
           }`}
         >
           {String(lesson.number).padStart(3, "0")}
@@ -41,7 +41,9 @@ export function LessonRow({ lesson, showModule = false }: { lesson: LessonWithSt
             <span className="tnum block text-[13px] text-graphite">S{String(lesson.week).padStart(2, "0")}</span>
           ) : null}
           {lesson.deload ? (
-            <span className="rotulo mt-0.5 block text-[10px] text-rope">descarga</span>
+            <span className="rotulo mt-0.5 inline-block bg-rope px-1.5 py-0.5 text-[10px] text-ink">
+              descarga
+            </span>
           ) : null}
         </span>
       </Link>

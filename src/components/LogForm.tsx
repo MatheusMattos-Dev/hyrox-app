@@ -49,7 +49,7 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
       <button
         type="button"
         onClick={() => setAberto(true)}
-        className="rotulo w-full bg-ember px-5 py-4 text-[12px] text-paper"
+        className="rotulo w-full bg-ember px-5 py-4 text-[12px] text-ink"
       >
         Registar este treino
       </button>
@@ -73,7 +73,7 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
             type="date"
             value={data}
             onChange={(evento) => setData(evento.target.value)}
-            className="tnum mt-1.5 w-full border border-line bg-paper-alt px-3 py-2.5 text-[15px] focus:border-ember focus:outline-none"
+            className="tnum mt-1.5 w-full border border-line bg-paper-alt px-3 py-2.5 text-[15px] focus:border-ink focus:outline-none"
           />
         </div>
 
@@ -90,7 +90,7 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
                 aria-pressed={nivel === opcao.valor}
                 className={`rotulo flex-1 border px-3 py-2.5 text-[12px] ${
                   nivel === opcao.valor
-                    ? "border-ember bg-ember text-paper"
+                    ? "border-ember bg-ember text-ink"
                     : "border-line bg-paper-alt text-graphite"
                 }`}
               >
@@ -137,7 +137,7 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
             onChange={(evento) => setNotas(evento.target.value)}
             rows={3}
             placeholder="O que sentiu, o que mudar da próxima"
-            className="mt-1.5 w-full border border-line bg-paper-alt px-3 py-2.5 text-[15px] leading-snug placeholder:text-graphite focus:border-ember focus:outline-none"
+            className="mt-1.5 w-full border border-line bg-paper-alt px-3 py-2.5 text-[15px] leading-snug placeholder:text-graphite focus:border-ink focus:outline-none"
           />
         </div>
       </div>
@@ -147,7 +147,7 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
           type="button"
           onClick={gravar}
           disabled={pendente}
-          className="rotulo flex-1 bg-ember px-5 py-3.5 text-[12px] text-paper disabled:opacity-60"
+          className="rotulo flex-1 bg-ember px-5 py-3.5 text-[12px] text-ink disabled:opacity-60"
         >
           {pendente ? "Guardando…" : registo ? "Atualizar registo" : "Guardar registo"}
         </button>
@@ -208,7 +208,7 @@ function Campo({
           value={valor}
           onChange={(evento) => aoMudar(evento.target.value)}
           placeholder={campo.dica}
-          className="w-full border border-line bg-paper-alt px-3 py-2.5 text-[15px] placeholder:text-graphite focus:border-ember focus:outline-none"
+          className="w-full border border-line bg-paper-alt px-3 py-2.5 text-[15px] placeholder:text-graphite focus:border-ink focus:outline-none"
         />
         {/* A unidade é decoração: o nome do campo já a diz por extenso. */}
         {campo.sufixo ? (

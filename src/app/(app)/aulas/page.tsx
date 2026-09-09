@@ -28,7 +28,7 @@ export default async function LessonsPage({
             name="q"
             defaultValue={q ?? ""}
             placeholder="Buscar por número ou assunto"
-            className="w-full border border-line bg-paper-alt px-4 py-3 text-[15px] text-ink placeholder:text-graphite focus:border-ember focus:outline-none"
+            className="w-full border border-line bg-paper-alt px-4 py-3 text-[15px] text-ink placeholder:text-graphite focus:border-ink focus:outline-none"
           />
           {bloco ? <input type="hidden" name="bloco" value={bloco} /> : null}
         </form>
@@ -67,7 +67,7 @@ export default async function LessonsPage({
             </p>
             <Link
               href="/aulas"
-              className="mt-4 inline-block text-[14px] font-semibold text-ember underline underline-offset-4"
+              className="mt-4 inline-block text-[14px] font-semibold underline underline-offset-4"
             >
               Limpar busca
             </Link>
@@ -110,7 +110,7 @@ function FilterChip({ href, label, active }: { href: string; label: string; acti
     <Link
       href={href}
       className={`shrink-0 whitespace-nowrap border px-3.5 py-1.5 text-[13px] font-semibold ${
-        active ? "border-ember bg-ember text-paper" : "border-line bg-paper-alt text-graphite"
+        active ? "border-ember bg-ember text-ink" : "border-line bg-paper-alt text-graphite"
       }`}
     >
       {label}

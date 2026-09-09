@@ -25,10 +25,14 @@ export function BottomNav() {
               <Link
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`rotulo flex flex-col items-center gap-1.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 text-[10px] font-bold ${
-                  active ? "text-ember" : "text-graphite"
+                className={`rotulo relative flex flex-col items-center gap-1.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 text-[10px] font-bold ${
+                  active ? "text-ink" : "text-graphite"
                 }`}
               >
+                {/* A aba ativa não depende só da cor: tem traço e ícone preenchido. */}
+                {active ? (
+                  <span className="absolute inset-x-0 top-0 h-[2px] bg-ember" aria-hidden="true" />
+                ) : null}
                 <Icon active={active} />
                 {item.label}
               </Link>

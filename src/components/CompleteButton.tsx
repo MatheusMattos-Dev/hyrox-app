@@ -14,8 +14,8 @@ export function CompleteButton({ lessonId, completed }: { lessonId: string; comp
 
   if (completed) {
     return (
-      <div className="flex items-center justify-between gap-4 border border-ember px-5 py-4">
-        <span className="rotulo text-[13px] text-ember">Aula concluída</span>
+      <div className="flex items-center justify-between gap-4 border border-ink px-5 py-4">
+        <span className="rotulo text-[13px] text-ink">Aula concluída</span>
         <button
           type="button"
           onClick={() => toggle(false)}

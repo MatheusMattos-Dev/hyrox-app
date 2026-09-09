@@ -31,7 +31,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         </p>
 
         <div className="mt-3 flex items-start gap-4">
-          <span className="tnum shrink-0 bg-ember px-2.5 py-1 text-[14px] font-semibold text-paper">
+          <span className="tnum shrink-0 bg-ember px-2.5 py-1 text-[14px] font-semibold text-ink">
             {numero}
           </span>
           <h1 className="display text-[40px] uppercase">
@@ -113,7 +113,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
                     {lesson.technique_cue}
                   </span>
                 ) : null}
-                <span className="mt-2 block text-[13px] font-semibold text-ember underline underline-offset-4">
+                <span className="mt-2 block text-[13px] font-semibold underline underline-offset-4">
                   Ver execução
                 </span>
               </span>
@@ -231,10 +231,10 @@ function Niveis({ lesson }: { lesson: LessonDetail }) {
           return (
             <li
               key={chave}
-              className={`p-4 ${referencia ? "border border-ember" : "border border-line"}`}
+              className={`p-4 ${referencia ? "border-2 border-ink" : "border border-line"}`}
             >
               <div>
-                <span className={`block text-[15px] font-bold ${referencia ? "text-ember" : ""}`}>
+                <span className="block text-[15px] font-bold">
                   {nome}
                 </span>
                 <span className="mt-0.5 block text-[12px] leading-tight text-graphite">{resumo}</span>
