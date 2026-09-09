@@ -65,7 +65,7 @@ contraponto, e são o que dá uso ao `--line-on-ink`. Tokens em
 | --- | --- |
 | `paper` `paper-alt` `line` | fundo, cartões e linhas |
 | `ink` `ink-2` `graphite` | texto, superfícies escuras e texto secundário |
-| `ember` `ember-dark` | progresso, botão, aula concluída, N2 |
+| `ember` `ember-dark` | progresso, botão, aula concluída |
 | `rope` | descarga e erro a vigiar |
 | `line-ink` | linhas sobre a superfície escura |
 
@@ -74,6 +74,11 @@ o Google unificou "Big Shoulders Display" nessa família; **IBM Plex Mono** (`.r
 nos rótulos em caixa alta e em todo número de dado, que é o que faz as colunas alinharem; e
 **IBM Plex Sans** no corpo. A voz do coach — coaching, erro a vigiar e registo — fica em IBM
 Plex Serif, a serifa da mesma superfamília, para separar conversa de prescrição.
+
+**Ember é cor de preenchimento, não de texto.** Sobre papel ele dá 2,72:1 — reprova para
+texto. Então botão laranja leva texto em `ink` (5,42:1), links vão em `ink` sublinhado, e a
+tarja de descarga é `rope` de fundo com `ink` por cima (8,96:1). Sobre a superfície escura o
+ember pode ser texto: ali dá 5,81:1. O foco é `currentColor`, para servir nos dois fundos.
 
 `--container`, `--pad-inline` e `--pad-section` ficam declarados mas ainda não ligados: são de
 página larga, e o app é uma coluna de telefone de 512 px com passo lateral fixo.
