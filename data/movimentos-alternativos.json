@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "empurrar-placa",
+    "name": "Empurrar placa no chão",
+    "category": "Alternativa",
+    "description": "Uma placa no chão liso faz o trabalho do trenó: empurrar carga com o corpo em linha.",
+    "cues": [
+      "Corpo em linha do calcanhar à cabeça",
+      "Passada curta e frequente"
+    ]
+  },
+  {
+    "slug": "thruster-com-halteres",
+    "name": "Thruster com halteres",
+    "category": "Alternativa",
+    "description": "Mesmo gesto do wall ball sem o lançamento: agachar abaixo do paralelo e estender tudo de uma vez.",
+    "cues": [
+      "Anca abaixo do paralelo",
+      "Braços sobem com a extensão, não depois"
+    ]
+  },
+  {
+    "slug": "avanco-com-halteres",
+    "name": "Avanço com halteres",
+    "category": "Alternativa",
+    "description": "A carga passa para as mãos em vez do ombro; o resto do padrão é o mesmo.",
+    "cues": [
+      "Ombros para trás e para baixo",
+      "Passada curta"
+    ]
+  },
+  {
+    "slug": "bicicleta-de-assalto",
+    "name": "Bicicleta de assalto",
+    "category": "Alternativa",
+    "description": "Não reproduz a puxada, mas entrega o mesmo estímulo de corpo inteiro.",
+    "cues": [
+      "Braços e pernas no mesmo ritmo",
+      "Cadência estável em vez de picos"
+    ]
+  },
+  {
+    "slug": "agachamento-frontal-kettlebell",
+    "name": "Agachamento frontal com kettlebell",
+    "category": "Alternativa",
+    "description": "A carga à frente obriga o tronco a ficar alto — costuma ensinar o fundo melhor que a barra.",
+    "cues": [
+      "Calcanhares no chão",
+      "Cotovelos altos para o tronco não cair"
+    ]
+  },
+  {
+    "slug": "terra-com-halteres",
+    "name": "Levantamento terra com halteres",
+    "category": "Alternativa",
+    "description": "Mesma dobradiça de anca, com a carga ao lado do corpo em vez de à frente.",
+    "cues": [
+      "Anca e ombros sobem juntos",
+      "Halteres rentes à perna"
+    ]
+  },
+  {
+    "slug": "desenvolvimento-com-halteres",
+    "name": "Desenvolvimento com halteres",
+    "category": "Alternativa",
+    "description": "Cada braço trabalha por si, o que expõe diferenças que a barra esconde.",
+    "cues": [
+      "Sem flexão das pernas no press estrito",
+      "Lombar não arqueia"
+    ]
+  },
+  {
+    "slug": "clean-com-kettlebell",
+    "name": "Clean com kettlebell",
+    "category": "Alternativa",
+    "description": "O mesmo tempo do levantamento técnico, com menos exigência de mobilidade de punho.",
+    "cues": [
+      "Extensão da anca antes da ação dos braços",
+      "Receber sem bater no antebraço"
+    ]
+  },
+  {
+    "slug": "puxada-na-polia",
+    "name": "Puxada na polia",
+    "category": "Alternativa",
+    "description": "Permite carga abaixo do peso corporal, que é o que falta a quem ainda não faz a barra.",
+    "cues": [
+      "Omoplata inicia o movimento",
+      "Extensão completa em cima"
+    ]
+  },
+  {
+    "slug": "bicicleta-estatica",
+    "name": "Bicicleta estática",
+    "category": "Alternativa",
+    "description": "A alteração que o próprio livro indica para os dias de corrida.",
+    "cues": [
+      "Cadência estável",
+      "Resistência que permita manter o ritmo"
+    ]
+  },
+  {
+    "slug": "agachamento-goblet-halteres",
+    "name": "Agachamento goblet com halteres",
+    "category": "Alternativa",
+    "description": "Carga à frente do peito; o tronco fica alto sozinho.",
+    "cues": [
+      "Calcanhares no chão",
+      "Cotovelos apontados ao chão"
+    ]
+  },
+  {
+    "slug": "agachamento-peso-corporal",
+    "name": "Agachamento sem carga",
+    "category": "Alternativa",
+    "description": "Sem nada em casa? O padrão é o mesmo, o que muda é a carga.",
+    "cues": [
+      "Calcanhares no chão",
+      "Descer até a anca passar do joelho"
+    ]
+  },
+  {
+    "slug": "terra-com-kettlebell",
+    "name": "Levantamento terra com kettlebell",
+    "category": "Alternativa",
+    "description": "Uma kettlebell entre os pés ensina a dobradiça melhor que a barra.",
+    "cues": [
+      "Anca e ombros sobem juntos",
+      "Kettlebell rente à canela"
+    ]
+  },
+  {
+    "slug": "desenvolvimento-com-kettlebell",
+    "name": "Desenvolvimento com kettlebell",
+    "category": "Alternativa",
+    "description": "A pega neutra poupa o ombro de quem tem pouca mobilidade.",
+    "cues": [
+      "Sem flexão das pernas no press estrito",
+      "Punho firme, sem dobrar"
+    ]
+  },
+  {
+    "slug": "remada-invertida",
+    "name": "Remada invertida",
+    "category": "Alternativa",
+    "description": "A barra baixa deixa regular a dificuldade pela inclinação do corpo.",
+    "cues": [
+      "Omoplata inicia o movimento",
+      "Corpo em linha do calcanhar à cabeça"
+    ]
+  },
+  {
+    "slug": "agachamento-bulgaro",
+    "name": "Agachamento búlgaro",
+    "category": "Alternativa",
+    "description": "Trabalha uma perna de cada vez, com o pé de trás apoiado num banco.",
+    "cues": [
+      "Joelho alinhado com o segundo dedo",
+      "Tronco alto"
+    ]
+  },
+  {
+    "slug": "clean-com-halteres",
+    "name": "Clean com halteres",
+    "category": "Alternativa",
+    "description": "Mesma sequência de tempos, com menos exigência de pega e punho.",
+    "cues": [
+      "Extensão da anca antes da ação dos braços",
+      "Receber com o cotovelo alto"
+    ]
+  },
+  {
+    "slug": "caminhada-rapida",
+    "name": "Caminhada rápida",
+    "category": "Alternativa",
+    "description": "A alteração que o próprio livro indica para os dias de corrida.",
+    "cues": [
+      "Passada ativa, não passeio",
+      "Ritmo que sobe a frequência sem correr"
+    ]
+  },
+  {
+    "slug": "thruster-com-kettlebell",
+    "name": "Thruster com kettlebell",
+    "category": "Alternativa",
+    "description": "O gesto do wall ball sem a bola nem a parede.",
+    "cues": [
+      "Anca abaixo do paralelo",
+      "Braços sobem com a extensão, não depois"
+    ]
+  },
+  {
+    "slug": "agachamento-com-press",
+    "name": "Agachamento com press acima da cabeça",
+    "category": "Alternativa",
+    "description": "Sem carga nenhuma, mantém o padrão agachar-e-empurrar do wall ball.",
+    "cues": [
+      "Anca abaixo do paralelo",
+      "Braços terminam sobre as orelhas"
+    ]
+  }
+]

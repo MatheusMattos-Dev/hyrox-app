@@ -56,6 +56,10 @@
     --texto-fraco: #9e978a;
     --borda: rgba(236, 231, 222, 0.16);
     --prosa: #cbc5b8;
+  /* As execuções são renders sobre branco: no escuro precisam de baixar. */
+  --brilho-da-placa: 0.74;
+    /* As execuções são renders sobre branco: no escuro precisam de baixar. */
+    --brilho-da-placa: 0.74;
   }
 }
 
@@ -111,6 +115,11 @@ body {
 .tnum {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
+}
+
+/* A placa branca das execuções, atenuada quando o tema é escuro. */
+.placa {
+  filter: brightness(var(--brilho-da-placa, 1)) saturate(1.08);
 }
 
 /* A voz do coach, a serifa da mesma família do corpo. */

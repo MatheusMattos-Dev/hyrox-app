@@ -101,7 +101,7 @@ function MovementsIcon({ active }: IconProps) {
       />
       <path
         d="M9.2 8.1 14 11l-4.8 2.9z"
-        fill={active ? "var(--color-paper)" : "currentColor"}
+        fill={active ? "var(--fundo)" : "currentColor"}
       />
     </>,
   );

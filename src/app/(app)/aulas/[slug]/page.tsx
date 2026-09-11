@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AncorasDaAula, type Ancora } from "@/components/AncorasDaAula";
+import { BlocoPrincipal } from "@/components/BlocoPrincipal";
 import { CompleteButton } from "@/components/CompleteButton";
 import { LessonMedia } from "@/components/LessonMedia";
 import { LogForm } from "@/components/LogForm";
@@ -9,8 +10,12 @@ import { MovementMedia } from "@/components/MovementTile";
 import { RailDeMovimentos } from "@/components/RailDeMovimentos";
 import { capitalizar, capitalizarTitulo } from "@/lib/format";
 import { getLessonBySlug } from "@/lib/queries";
+import { explicarVia } from "@/lib/vias";
 import { vincularMovimentos } from "@/lib/vincular-movimentos";
 import type { LessonDetail } from "@/lib/types";
+
+/** Os minutos de cada bloco. Ficam aqui para o resumo e os blocos concordarem. */
+const MINUTOS = { aquecimento: 10, tecnico: 8, principal: 32, arrefecimento: 10 };
 
 export default async function LessonPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -52,26 +57,14 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
           </h1>
         </div>
 
-        <ul className="mt-4 flex flex-wrap gap-1.5">
-          {lesson.session_type ? (
-            <li>
-              <Link
-                href={`/aulas?tipo=${encodeURIComponent(lesson.session_type)}`}
-                className="block border border-borda bg-superficie px-2.5 py-1 text-[12px] font-semibold text-texto-fraco underline underline-offset-4"
-              >
-                {capitalizar(lesson.session_type)}
-              </Link>
-            </li>
-          ) : null}
-          {[lesson.stimulus, lesson.pathway, lesson.tag].filter(Boolean).map((chip) => (
-            <li
-              key={chip}
-              className="border border-borda bg-superficie px-2.5 py-1 text-[12px] font-semibold text-texto-fraco"
-            >
-              {chip === lesson.tag ? chip : capitalizar(String(chip))}
-            </li>
-          ))}
-        </ul>
+        {lesson.session_type ? (
+          <Link
+            href={`/aulas?tipo=${encodeURIComponent(lesson.session_type)}`}
+            className="mt-4 inline-block border border-borda bg-superficie px-2.5 py-1 text-[12px] font-semibold text-texto-fraco underline underline-offset-4"
+          >
+            {capitalizar(lesson.session_type)}
+          </Link>
+        ) : null}
       </header>
 
       {lesson.deload ? (
@@ -82,22 +75,31 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         </p>
       ) : null}
 
-      {lesson.equipment || lesson.space ? (
-        <dl className="mt-5 border-t border-borda text-[14px]">
-          {lesson.equipment ? (
-            <div className="flex gap-4 border-b border-borda py-2.5">
-              <dt className="w-24 shrink-0 font-semibold">Equipamento</dt>
-              <dd className="text-texto-fraco">{lesson.equipment}</dd>
-            </div>
-          ) : null}
-          {lesson.space ? (
-            <div className="flex gap-4 border-b border-borda py-2.5">
-              <dt className="w-24 shrink-0 font-semibold">Espaço</dt>
-              <dd className="text-texto-fraco">{lesson.space}</dd>
-            </div>
-          ) : null}
-        </dl>
-      ) : null}
+      <dl className="mt-5 border-t border-borda text-[14px]">
+        {lesson.stimulus ? (
+          <Ficha rotulo="O que treina">{capitalizar(lesson.stimulus)}</Ficha>
+        ) : null}
+        {lesson.pathway ? (
+          <Ficha rotulo="Via">
+            {capitalizar(lesson.pathway)}
+            {explicarVia(lesson.pathway) ? (
+              <span className="mt-0.5 block text-[13px] leading-snug text-texto-fraco">
+                {explicarVia(lesson.pathway)}
+              </span>
+            ) : null}
+          </Ficha>
+        ) : null}
+        {lesson.duration_min ? (
+          <Ficha rotulo="Duração">
+            <span className="tnum">{lesson.duration_min} min</span>
+            <span className="tnum text-texto-fraco">
+              {` · ${MINUTOS.aquecimento} + ${MINUTOS.tecnico} + ${MINUTOS.principal} + ${MINUTOS.arrefecimento}`}
+            </span>
+          </Ficha>
+        ) : null}
+        {lesson.equipment ? <Ficha rotulo="Equipamento">{lesson.equipment}</Ficha> : null}
+        {lesson.space ? <Ficha rotulo="Espaço">{lesson.space}</Ficha> : null}
+      </dl>
 
       {lesson.media_url ? (
         <div className="mt-6">
@@ -108,7 +110,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
       <AncorasDaAula ancoras={ancoras} />
 
       {lesson.warmup?.length ? (
-        <Bloco id="aquecimento" titulo="Aquecimento" minutos={10}>
+        <Bloco id="aquecimento" titulo="Aquecimento" minutos={MINUTOS.aquecimento}>
           <ul>
             {lesson.warmup.map((item) => (
               <li
@@ -129,7 +131,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
       ) : null}
 
       {movement || lesson.technique_cue ? (
-        <Bloco id="tecnico" titulo="Bloco técnico" minutos={8}>
+        <Bloco id="tecnico" titulo="Bloco técnico" minutos={MINUTOS.tecnico}>
           {movement ? (
             <Link href={`/movimentos/${movement.slug}`} className="flex items-center gap-4">
               <span className="w-[112px] shrink-0">
@@ -159,15 +161,15 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
       ) : null}
 
       {lesson.main_block ? (
-        <Bloco id="principal" titulo="Bloco principal" minutos={32} destaque>
-          <p className="whitespace-pre-line text-[15px] leading-relaxed">{lesson.main_block}</p>
+        <Bloco id="principal" titulo="Bloco principal" minutos={MINUTOS.principal} destaque>
+          <BlocoPrincipal texto={lesson.main_block} />
         </Bloco>
       ) : null}
 
       {lesson.levels ? <Niveis lesson={lesson} /> : null}
 
       {lesson.cooldown ? (
-        <Bloco id="arrefecimento" titulo="Arrefecimento" minutos={10}>
+        <Bloco id="arrefecimento" titulo="Arrefecimento" minutos={MINUTOS.arrefecimento}>
           <p className="text-[15px] leading-snug">{lesson.cooldown}</p>
         </Bloco>
       ) : null}
@@ -191,6 +193,10 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
       <div className="mt-4">
         <CompleteButton lessonId={lesson.id} completed={lesson.completed} />
       </div>
+
+      {lesson.tag ? (
+        <p className="rotulo mt-8 text-[10px] text-texto-fraco">Fonte · {lesson.tag}</p>
+      ) : null}
 
       <nav className="mt-8 flex gap-3 border-t border-borda pt-4">
         {lesson.previous ? (
@@ -218,6 +224,16 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         ) : null}
       </nav>
     </main>
+  );
+}
+
+/** Uma linha da ficha da sessão: rótulo à esquerda, conteúdo à direita. */
+function Ficha({ rotulo, children }: { rotulo: string; children: React.ReactNode }) {
+  return (
+    <div className="flex gap-4 border-b border-borda py-2.5">
+      <dt className="w-[104px] shrink-0 font-semibold">{rotulo}</dt>
+      <dd className="min-w-0 flex-1">{children}</dd>
+    </div>
   );
 }
 

@@ -68,15 +68,18 @@ function defineRunners() {
       // à parte, num arquivo próprio, para o parser continuar fiel ao PDF.
       const doLivro = await readData("movements");
       const doAquecimento = (await readData("aquecimento")) ?? [];
-      const asAlternativas = (await readData("alternativas")) ?? [];
+      const asAlternativas = (await readData("movimentos-alternativos")) ?? [];
       if (!doLivro) return;
 
       const rows = [...doLivro, ...doAquecimento, ...asAlternativas];
+      // gif_url fica de fora quando a origem não o traz. O upsert só atualiza
+      // as colunas que recebe, então omitir preserva o que a etapa "gifs"
+      // ligou — antes disto, reimportar os movimentos apagava as execuções.
       const payload = rows.map((row, index) => ({
         slug: row.slug,
         name: row.name,
         category: row.category || null,
-        gif_url: row.gif_url || null,
+        ...(row.gif_url ? { gif_url: row.gif_url } : {}),
         description: row.description || null,
         cues: toList(row.cues),
         common_errors: toList(row.common_errors),

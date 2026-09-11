@@ -76,6 +76,16 @@ const ESCOLHAS = [
   { slug: "clean-com-kettlebell", arquivo: "Kettlebell-Clean-and-Press", leve: true },
   { slug: "puxada-na-polia", arquivo: "Cable-Close-Grip-Front-Lat-Pulldown", leve: true },
   { slug: "bicicleta-estatica", arquivo: "Stationary-Bike-Run", leve: true },
+  { slug: "agachamento-goblet-halteres", arquivo: "HALTERES/PERNA/Dumbbell-Front-Squat", leve: true },
+  { slug: "agachamento-peso-corporal", arquivo: "Bodyweight-Squat-(male)_Thighs-SIDE-POV", leve: true },
+  { slug: "terra-com-kettlebell", arquivo: "KETTLEBELL/PERNA/Kettlebell-deadlift", leve: true },
+  { slug: "desenvolvimento-com-kettlebell", arquivo: "Kettlebell-Alternating-Press", leve: true },
+  { slug: "remada-invertida", arquivo: "Ring-Inverted-Row-parallel-to-the-floor", leve: true },
+  { slug: "agachamento-bulgaro", arquivo: "Bulgarian-Split-Squat-with-Chair", leve: true },
+  { slug: "clean-com-halteres", arquivo: "HALTERES/PERNA/Dumbbell-Clean_Thighs", leve: true },
+  { slug: "caminhada-rapida", arquivo: "CARDIO/Briskly-Walking_Cardio", leve: true },
+  { slug: "thruster-com-kettlebell", arquivo: "Kettlebell-Thruster", leve: true },
+  { slug: "agachamento-com-press", arquivo: "Bodyweight-Squat-Overhead-Press", leve: true },
 ];
 
 /** Movimentos sem execução à altura. Ficam com o desenho do app. */

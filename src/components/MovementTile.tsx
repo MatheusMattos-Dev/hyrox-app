@@ -27,7 +27,7 @@ export function MovementMedia({
         src={movement.gif_url}
         alt={`Execução do movimento ${movement.name}`}
         loading="lazy"
-        className={`w-full rounded-panel bg-[#fcfbfc] object-cover ${className}`}
+        className={`placa w-full rounded-panel bg-[#fcfbfc] object-cover ${className}`}
       />
     );
   }

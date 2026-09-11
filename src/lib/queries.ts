@@ -438,9 +438,9 @@ export async function getMovementBySlug(slug: string): Promise<MovementDetail | 
   const movement = movements.find((atual) => atual.slug === slug);
   if (!movement) return null;
 
-  const alternativas = alternativasDe(slug).flatMap(({ slug: outro, motivo }) => {
+  const alternativas = alternativasDe(slug).flatMap(({ slug: outro, com }) => {
     const encontrado = movements.find((atual) => atual.slug === outro);
-    return encontrado ? [{ movement: encontrado, motivo }] : [];
+    return encontrado ? [{ movement: encontrado, com }] : [];
   });
 
   return { ...movement, alternativas };

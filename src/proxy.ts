@@ -11,7 +11,10 @@ export default async function proxy(request: NextRequest) {
   const isPublic = PUBLIC_PATHS.some(
     (path) => pathname === path || pathname.startsWith(`${path}/`),
   );
-  const isDemo = request.cookies.get(DEMO_COOKIE)?.value === "1";
+  // A sessão de demonstração só vale enquanto não há Supabase. Com o projeto
+  // ligado ela é um beco sem saída: o RLS não entrega conteúdo a quem não está
+  // autenticado, e o aluno veria o app inteiro vazio em vez da tela de entrada.
+  const isDemo = !isSupabaseConfigured && request.cookies.get(DEMO_COOKIE)?.value === "1";
   const signedIn = Boolean(userId) || isDemo;
 
   if (!signedIn && !isPublic) {

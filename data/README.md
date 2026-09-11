@@ -85,9 +85,16 @@ controlados" para o unilateral, "trote" para a corrida.
 ## Alternativas por falta de equipamento
 
 Cem das 250 aulas pedem trenó, sandbag, wall ball ou barra fixa — coisa que academia comum não
-tem. [alternativas.json](alternativas.json) dá uma saída para cada um desses movimentos, com o
-motivo escrito ("sem trenó", "sem barra"), e a ficha do movimento mostra a secção *Não tem o
-equipamento?*.
+tem. A ficha do movimento mostra a secção *Não tem o equipamento?* com **várias saídas**, cada
+uma rotulada pelo que **exige** ("com kettlebell", "na polia", "sem carga") e não pelo que
+falta: uma alternativa só é um plano B fraco, porque quem não tem barra muitas vezes também não
+tem kettlebell.
+
+São dois ficheiros, com um trabalho cada:
+[movimentos-alternativos.json](movimentos-alternativos.json) define os movimentos e
+[alternativas.json](alternativas.json) diz qual substitui qual. Separados porque boa parte das
+alternativas **já existe** no app — o próprio livro manda "agachamento e levantamento terra se
+não houver trenó", e esses dois são movimentos do curso.
 
 O critério é **falta de equipamento, nunca variedade**. O programa é de 50 semanas e o progresso
 mede-se no mesmo gesto: o próprio livro diz que "a estrutura repete-se; o que muda é a carga",

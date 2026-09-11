@@ -87,7 +87,7 @@ export type LogEntry = LessonLog & {
 
 /** Um movimento com as saídas para quem não tem o equipamento dele. */
 export type MovementDetail = Movement & {
-  alternativas: Array<{ movement: Movement; motivo: string }>;
+  alternativas: Array<{ movement: Movement; com: string }>;
 };
 
 export type LessonWithState = Lesson & {
