@@ -1,21 +1,40 @@
 import Link from "next/link";
 import { LessonRow } from "@/components/LessonRow";
 import { ProgressRule } from "@/components/ProgressRule";
-import { listLessons, listModuleSummaries } from "@/lib/queries";
+import { capitalizar } from "@/lib/format";
+import { listLessons, listModuleSummaries, listSessionTypes } from "@/lib/queries";
 
 export default async function LessonsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; bloco?: string }>;
+  searchParams: Promise<{ q?: string; bloco?: string; tipo?: string }>;
 }) {
-  const { q, bloco } = await searchParams;
-  const [modules, lessons] = await Promise.all([
+  const { q, bloco, tipo } = await searchParams;
+  const [modules, tipos, lessons] = await Promise.all([
     listModuleSummaries(),
-    listLessons({ query: q, moduleSlug: bloco }),
+    listSessionTypes(),
+    listLessons({ query: q, moduleSlug: bloco, sessionType: tipo }),
   ]);
 
-  const filtering = Boolean(q?.trim() || bloco);
+  const filtering = Boolean(q?.trim() || bloco || tipo);
   const activeModule = modules.find((module) => module.slug === bloco);
+  // O progresso sai do próprio resultado, para bater com qualquer combinação
+  // de filtros em vez de com um deles só.
+  const concluidas = lessons.filter((lesson) => lesson.completed).length;
+
+  /** Mantém os outros filtros ao trocar um deles. */
+  const comFiltros = (mudanca: { bloco?: string; tipo?: string }) => {
+    const params = new URLSearchParams();
+    if (q?.trim()) params.set("q", q);
+
+    const novoBloco = "bloco" in mudanca ? mudanca.bloco : bloco;
+    const novoTipo = "tipo" in mudanca ? mudanca.tipo : tipo;
+    if (novoBloco) params.set("bloco", novoBloco);
+    if (novoTipo) params.set("tipo", novoTipo);
+
+    const busca = params.toString();
+    return busca ? `/aulas?${busca}` : "/aulas";
+  };
 
   return (
     <main className="pt-10">
@@ -28,52 +47,67 @@ export default async function LessonsPage({
             name="q"
             defaultValue={q ?? ""}
             placeholder="Buscar por número ou assunto"
-            className="w-full border border-line bg-paper-alt px-4 py-3 text-[15px] text-ink placeholder:text-graphite focus:border-ink focus:outline-none"
+            className="w-full border border-borda bg-superficie px-4 py-3 text-[15px] text-texto placeholder:text-texto-fraco focus:border-texto focus:outline-none"
           />
           {bloco ? <input type="hidden" name="bloco" value={bloco} /> : null}
+          {tipo ? <input type="hidden" name="tipo" value={tipo} /> : null}
         </form>
       </header>
 
-      <nav className="no-scrollbar mt-4 flex gap-2 overflow-x-auto px-5 pb-1">
-        <FilterChip href="/aulas" label="Tudo" active={!bloco} />
+      <FiltroLinha rotulo="Tipo de sessão">
+        <Chip href={comFiltros({ tipo: undefined })} label="Tudo" active={!tipo} />
+        {tipos.map((item) => (
+          <Chip
+            key={item.tipo}
+            href={comFiltros({ tipo: item.tipo })}
+            label={capitalizar(item.tipo)}
+            active={tipo === item.tipo}
+          />
+        ))}
+      </FiltroLinha>
+
+      <FiltroLinha rotulo="Mesociclo">
+        <Chip href={comFiltros({ bloco: undefined })} label="Tudo" active={!bloco} />
         {modules.map((module) => (
-          <FilterChip
+          <Chip
             key={module.id}
-            href={`/aulas?bloco=${module.slug}`}
+            href={comFiltros({ bloco: module.slug })}
             label={module.title}
             active={bloco === module.slug}
           />
         ))}
-      </nav>
+      </FiltroLinha>
 
-      {activeModule ? (
+      {filtering && lessons.length > 0 ? (
         <section className="mt-5 px-5">
-          <p className="text-[14px] leading-snug text-graphite">{activeModule.subtitle}</p>
-          <p className="tnum mt-3 text-[13px] text-graphite">
-            {activeModule.completed} de {activeModule.total} concluídas
+          {activeModule?.subtitle ? (
+            <p className="text-[14px] leading-snug text-texto-fraco">{activeModule.subtitle}</p>
+          ) : null}
+          <p className="tnum mt-3 text-[13px] text-texto-fraco">
+            {concluidas} de {lessons.length} concluídas
           </p>
           <div className="mt-2">
-            <ProgressRule completed={activeModule.completed} total={activeModule.total} />
+            <ProgressRule completed={concluidas} total={lessons.length} />
           </div>
         </section>
       ) : null}
 
       <section className="mt-6 px-5 pb-12">
         {lessons.length === 0 ? (
-          <div className="border border-line bg-paper-alt px-5 py-8">
-            <p className="text-[15px] font-semibold">Nenhuma aula com esse termo.</p>
-            <p className="mt-1 text-[14px] text-graphite">
+          <div className="border border-borda bg-superficie px-5 py-8">
+            <p className="text-[15px] font-semibold">Nenhuma aula com esses filtros.</p>
+            <p className="mt-1 text-[14px] text-texto-fraco">
               Tente o número da aula ou o nome da estação.
             </p>
             <Link
               href="/aulas"
               className="mt-4 inline-block text-[14px] font-semibold underline underline-offset-4"
             >
-              Limpar busca
+              Limpar tudo
             </Link>
           </div>
         ) : filtering ? (
-          <ul className="border-t border-line">
+          <ul className="border-t border-borda">
             {lessons.map((lesson) => (
               <LessonRow key={lesson.id} lesson={lesson} showModule={!bloco} />
             ))}
@@ -85,9 +119,9 @@ export default async function LessonsPage({
 
             return (
               <section key={module.id} className="mb-8">
-                <div className="flex items-baseline justify-between border-b border-ink pb-1.5">
+                <div className="flex items-baseline justify-between border-b border-texto pb-1.5">
                   <h2 className="rotulo text-[12px]">{module.title}</h2>
-                  <span className="tnum text-[13px] text-graphite">
+                  <span className="tnum text-[13px] text-texto-fraco">
                     {module.completed}/{module.total}
                   </span>
                 </div>
@@ -105,12 +139,22 @@ export default async function LessonsPage({
   );
 }
 
-function FilterChip({ href, label, active }: { href: string; label: string; active: boolean }) {
+/** Uma fila de filtros, com o nome do que ela filtra à esquerda. */
+function FiltroLinha({ rotulo, children }: { rotulo: string; children: React.ReactNode }) {
+  return (
+    <div className="mt-4">
+      <p className="rotulo px-5 text-[10px] text-texto-fraco">{rotulo}</p>
+      <nav className="no-scrollbar mt-1.5 flex gap-2 overflow-x-auto px-5 pb-1">{children}</nav>
+    </div>
+  );
+}
+
+function Chip({ href, label, active }: { href: string; label: string; active: boolean }) {
   return (
     <Link
       href={href}
       className={`shrink-0 whitespace-nowrap border px-3.5 py-1.5 text-[13px] font-semibold ${
-        active ? "border-ember bg-ember text-ink" : "border-line bg-paper-alt text-graphite"
+        active ? "border-ember bg-ember text-ink" : "border-borda bg-superficie text-texto-fraco"
       }`}
     >
       {label}

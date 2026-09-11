@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "import": "node scripts/import.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "gifs": "node scripts/preparar-gifs.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
@@ -25,6 +26,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
     "pdfjs-dist": "^6.3.289",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

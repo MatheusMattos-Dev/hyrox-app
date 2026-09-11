@@ -87,13 +87,19 @@ async function readPages() {
       if (!item.str) continue;
       const y = Math.round(item.transform[5]);
       if (!linhas.has(y)) linhas.set(y, []);
-      linhas.get(y).push({ x: item.transform[4], s: item.str });
+      linhas.get(y).push({ x: item.transform[4], w: item.width ?? 0, s: item.str });
     }
 
     const texto = [...linhas.entries()]
       .sort((a, b) => b[0] - a[0])
-      .map(([, itens]) => itens.sort((a, b) => a.x - b.x).map((i) => i.s).join("").trim())
-      .filter(Boolean);
+      .map(([, itens]) => {
+        const ord = itens.sort((a, b) => a.x - b.x);
+        const ultimo = ord[ord.length - 1];
+        // Onde a linha termina na página: é isso que diz se ela quebrou por
+        // falta de largura ou porque o autor quis quebrá-la.
+        return { s: ord.map((i) => i.s).join("").trim(), fim: ultimo.x + ultimo.w };
+      })
+      .filter((l) => l.s);
 
     pages.push(texto);
   }
@@ -101,34 +107,77 @@ async function readPages() {
   return pages;
 }
 
-/** Junta linhas partidas por hífen de translineação e remove emoji. */
-function limpar(linhas) {
-  const out = [];
-  for (let linha of linhas) {
-    linha = linha.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{2B00}-\u{2BFF}]/gu, "").trim();
+/**
+ * Junta linhas partidas por hífen de translineação e remove emoji. Devolve o
+ * texto e, em paralelo, onde cada linha termina — quem monta o bloco principal
+ * precisa disso para separar quebra de largura de quebra de propósito.
+ */
+function limpar(itens) {
+  const linhas = [];
+  const fins = [];
+
+  for (const item of itens) {
+    const linha = item.s
+      .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{2B00}-\u{2BFF}]/gu, "")
+      .trim();
     if (!linha) continue;
-    const anterior = out[out.length - 1];
+
+    const anterior = linhas[linhas.length - 1];
     if (anterior && /[‐-]$/.test(anterior)) {
-      out[out.length - 1] = anterior.replace(/[‐-]$/, "") + linha;
+      linhas[linhas.length - 1] = anterior.replace(/[‐-]$/, "") + linha;
+      fins[fins.length - 1] = item.fim;
     } else {
-      out.push(linha);
+      linhas.push(linha);
+      fins.push(item.fim);
     }
   }
-  return out;
+
+  return { linhas, fins };
 }
 
+/** Onde a coluna de texto do livro termina. Medido no PDF: p90 dos fins é 538,5. */
+const MARGEM_DIREITA = 538.7;
+
+/** Marcadores que sempre abrem item novo, mesmo colados à margem. */
+const MARCADOR = /^([A-Z]\.|·|•|Série \d|\d+ rondas)/;
+
 /**
- * O PDF quebra linhas pela largura da coluna. Só abre item novo quando a linha
- * anterior fecha frase ou quando esta comeca com marcador ("A.", "·", "Série 2").
+ * O PDF quebra linhas pela largura da coluna, e essas quebras têm de ser
+ * desfeitas; as que o autor escreveu, não. A diferença está na geometria: uma
+ * linha que quebrou por largura vai até à margem, uma que quebrou de propósito
+ * para antes. O teste exato é se a primeira palavra da linha seguinte teria
+ * cabido na folga que sobrou — se cabia e mesmo assim desceu, a quebra é
+ * intencional.
  */
-function refluir(linhas) {
+function refluir(linhas, fins) {
   const out = [];
-  for (const linha of linhas) {
+  const fimDeSaida = [];
+
+  for (let i = 0; i < linhas.length; i += 1) {
+    const linha = linhas[i];
     const anterior = out[out.length - 1];
-    const marcador = /^([A-Z]\.|·|Série \d|\d+ rondas|Depois|Alvo|Usar|Registar|Sem trenó|Se |A corrida|Terminar|Prioridade|Ajustar)/.test(linha);
-    if (!anterior || marcador || /[.:]$/.test(anterior)) out.push(linha);
-    else out[out.length - 1] = anterior + " " + linha;
+
+    if (!anterior || MARCADOR.test(linha)) {
+      out.push(linha);
+      fimDeSaida.push(fins[i]);
+      continue;
+    }
+
+    const folga = MARGEM_DIREITA - fimDeSaida[fimDeSaida.length - 1];
+    const primeiraPalavra = linha.split(/\s+/)[0] ?? "";
+    // Largura média do caractere nesta linha, para estimar a palavra seguinte.
+    const larguraDoCaractere = linha.length > 0 ? (fins[i] - 60) / linha.length : 0;
+    const cabia = folga > primeiraPalavra.length * larguraDoCaractere;
+
+    if (cabia) {
+      out.push(linha);
+      fimDeSaida.push(fins[i]);
+    } else {
+      out[out.length - 1] = anterior + " " + linha;
+      fimDeSaida[fimDeSaida.length - 1] = fins[i];
+    }
   }
+
   return out;
 }
 
@@ -137,7 +186,7 @@ function juntar(linhas) {
 }
 
 function parseAula(linhasBrutas, numeroEsperado) {
-  const linhas = limpar(linhasBrutas);
+  const { linhas, fins } = limpar(linhasBrutas);
   const idx = linhas.findIndex((l) => /^AULA \d{3}$/.test(l));
   if (idx === -1) return null;
 
@@ -197,7 +246,9 @@ function parseAula(linhasBrutas, numeroEsperado) {
   const principalLinhas = linhas.slice(iPrincipal + 1, iTabela);
   const iDescarga = principalLinhas.findIndex((l) => l.startsWith("SEMANA DE DESCARGA."));
   const descarga = iDescarga !== -1;
-  const principal = refluir(descarga ? principalLinhas.slice(0, iDescarga) : principalLinhas).join("\n");
+  const principalFins = fins.slice(iPrincipal + 1, iTabela);
+  const ate = descarga ? iDescarga : principalLinhas.length;
+  const principal = refluir(principalLinhas.slice(0, ate), principalFins.slice(0, ate)).join("\n");
 
   const arrefecimento = juntar(linhas.slice(iArref + 1, iCoach));
   const coaching = juntar(linhas.slice(iCoach, iErro)).replace(/^COACHING\s*/, "");
@@ -246,7 +297,7 @@ const aulas = [];
 for (const pagina of paginas) {
   const proxima = aulas.length + 1;
   if (proxima > 250) break;
-  const limpa = limpar(pagina);
+  const { linhas: limpa } = limpar(pagina);
   if (!limpa.some((l) => l === `AULA ${String(proxima).padStart(3, "0")}`)) continue;
   aulas.push(parseAula(pagina, proxima));
 }

@@ -57,13 +57,13 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
   }
 
   return (
-    <section className="border border-line p-4">
+    <section className="border border-borda p-4">
       <div className="flex items-baseline justify-between">
         <h2 className="rotulo text-[12px]">Registo do treino</h2>
-        {registo ? <span className="tnum text-[12px] text-graphite">guardado</span> : null}
+        {registo ? <span className="tnum text-[12px] text-texto-fraco">guardado</span> : null}
       </div>
 
-      <p className="mt-2 text-[13px] leading-snug text-graphite">{lesson.log_what}</p>
+      <p className="mt-2 text-[13px] leading-snug text-texto-fraco">{lesson.log_what}</p>
 
       <div className="mt-4 space-y-4">
         <div>
@@ -73,12 +73,12 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
             type="date"
             value={data}
             onChange={(evento) => setData(evento.target.value)}
-            className="tnum mt-1.5 w-full border border-line bg-paper-alt px-3 py-2.5 text-[15px] focus:border-ink focus:outline-none"
+            className="tnum mt-1.5 w-full border border-borda bg-superficie px-3 py-2.5 text-[15px] focus:border-texto focus:outline-none"
           />
         </div>
 
         <div role="group" aria-labelledby={`${prefixo}-nivel`}>
-          <span id={`${prefixo}-nivel`} className="rotulo block text-[10px] text-graphite">
+          <span id={`${prefixo}-nivel`} className="rotulo block text-[10px] text-texto-fraco">
             Nível usado
           </span>
           <div className="mt-1.5 flex gap-2">
@@ -91,7 +91,7 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
                 className={`rotulo flex-1 border px-3 py-2.5 text-[12px] ${
                   nivel === opcao.valor
                     ? "border-ember bg-ember text-ink"
-                    : "border-line bg-paper-alt text-graphite"
+                    : "border-borda bg-superficie text-texto-fraco"
                 }`}
               >
                 {opcao.rotulo}
@@ -137,7 +137,7 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
             onChange={(evento) => setNotas(evento.target.value)}
             rows={3}
             placeholder="O que sentiu, o que mudar da próxima"
-            className="mt-1.5 w-full border border-line bg-paper-alt px-3 py-2.5 text-[15px] leading-snug placeholder:text-graphite focus:border-ink focus:outline-none"
+            className="mt-1.5 w-full border border-borda bg-superficie px-3 py-2.5 text-[15px] leading-snug placeholder:text-texto-fraco focus:border-texto focus:outline-none"
           />
         </div>
       </div>
@@ -157,7 +157,7 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
             type="button"
             onClick={apagar}
             disabled={pendente}
-            className="text-[14px] font-semibold text-graphite underline underline-offset-4 disabled:opacity-50"
+            className="text-[14px] font-semibold text-texto-fraco underline underline-offset-4 disabled:opacity-50"
           >
             Apagar
           </button>
@@ -165,7 +165,7 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
           <button
             type="button"
             onClick={() => setAberto(false)}
-            className="text-[14px] font-semibold text-graphite underline underline-offset-4"
+            className="text-[14px] font-semibold text-texto-fraco underline underline-offset-4"
           >
             Agora não
           </button>
@@ -175,10 +175,10 @@ export function LogForm({ lesson }: { lesson: LessonDetail }) {
       {erro ? (
         <p className="mt-3 border-l-2 border-rope pl-3 text-[13px] leading-snug">
           O registo não foi guardado — o que você escreveu continua aqui. Tente de novo.
-          <span className="mt-1 block text-[12px] text-graphite">{erro}</span>
+          <span className="mt-1 block text-[12px] text-texto-fraco">{erro}</span>
         </p>
       ) : !registo ? (
-        <p className="mt-3 text-[12px] leading-snug text-graphite">
+        <p className="mt-3 text-[12px] leading-snug text-texto-fraco">
           Guardar o registo marca a aula como concluída.
         </p>
       ) : null}
@@ -208,11 +208,11 @@ function Campo({
           value={valor}
           onChange={(evento) => aoMudar(evento.target.value)}
           placeholder={campo.dica}
-          className="w-full border border-line bg-paper-alt px-3 py-2.5 text-[15px] placeholder:text-graphite focus:border-ink focus:outline-none"
+          className="w-full border border-borda bg-superficie px-3 py-2.5 text-[15px] placeholder:text-texto-fraco focus:border-texto focus:outline-none"
         />
         {/* A unidade é decoração: o nome do campo já a diz por extenso. */}
         {campo.sufixo ? (
-          <span className="rotulo shrink-0 text-[11px] text-graphite" aria-hidden="true">
+          <span className="rotulo shrink-0 text-[11px] text-texto-fraco" aria-hidden="true">
             {campo.sufixo}
           </span>
         ) : null}
@@ -223,7 +223,7 @@ function Campo({
 
 function Rotulo({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
   return (
-    <label htmlFor={htmlFor} className="rotulo block text-[10px] text-graphite">
+    <label htmlFor={htmlFor} className="rotulo block text-[10px] text-texto-fraco">
       {children}
     </label>
   );

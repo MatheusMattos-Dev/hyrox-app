@@ -46,9 +46,16 @@ node scripts/parse-livro.mjs   # PDF -> data/*.json (250 aulas, 10 mesociclos, 1
 npm run import all             # data/*.json -> Supabase
 ```
 
-Depois, para publicar os GIFs de execução: coloque os arquivos em `data/gifs/` nomeados
-pelo slug do movimento (`agachamento.gif`, `treno.gif`, `wall-ball.gif`…) e rode
-`npm run import gifs`. Detalhes em [data/README.md](data/README.md).
+Os GIFs de execução saem de uma biblioteca de treino funcional e passam por um preparo que
+reduz e converte para WebP animado antes de subir:
+
+```bash
+npm run gifs -- "CAMINHO/DA/BIBLIOTECA"   # -> data/gifs/*.webp
+npm run import gifs                        # -> storage do Supabase
+```
+
+Dez dos doze movimentos têm execução; dois ficam com o desenho do app. Detalhes e o porquê em
+[data/README.md](data/README.md).
 
 O importador usa a `SUPABASE_SERVICE_ROLE_KEY` e faz upsert: rodar de novo atualiza o que
 mudou em vez de duplicar.
@@ -61,13 +68,25 @@ descarga e erro a vigiar. As duas telas escuras (a entrada e o cartão de contin
 contraponto, e são o que dá uso ao `--line-on-ink`. Tokens em
 [src/app/globals.css](src/app/globals.css):
 
-| Token | Onde entra |
+Há dois níveis de token. A **paleta literal** não muda com o tema — serve às superfícies
+que são escuras nos dois modos (a entrada, o cartão de hoje) e aos pares fixos, como texto de
+tinta sobre laranja. Os **papéis** trocam entre claro e escuro, e é por eles que as telas pedem.
+
+| Papel | Onde entra |
 | --- | --- |
-| `paper` `paper-alt` `line` | fundo, cartões e linhas |
-| `ink` `ink-2` `graphite` | texto, superfícies escuras e texto secundário |
+| `fundo` `superficie` `borda` | fundo da tela, cartões e campos, linhas |
+| `texto` `texto-fraco` | texto principal e secundário |
+
+| Paleta literal | Onde entra |
+| --- | --- |
 | `ember` `ember-dark` | progresso, botão, aula concluída |
 | `rope` | descarga e erro a vigiar |
-| `line-ink` | linhas sobre a superfície escura |
+| `ink-2` `line-ink` `paper` | a entrada e o cartão de hoje, escuros nos dois modos |
+| `ink` | texto sobre laranja e sobre dourado, que não muda |
+
+O modo escuro segue o sistema e pode ser trocado à mão em **Perfil → Aparência**. A escolha
+vai para o `localStorage` e um script no `<head>` a aplica antes da primeira pintura, senão
+quem escolheu escuro veria um lampejo de papel a cada carregamento.
 
 Três famílias, três funções: **Big Shoulders** (`.display`) nos títulos e nos números grandes —
 o Google unificou "Big Shoulders Display" nessa família; **IBM Plex Mono** (`.rotulo`, `.tnum`)
@@ -98,6 +117,7 @@ chega — e continua a servir de reserva depois.
 | `src/app/auth/` | Callback do OAuth, saída e entrada de demonstração |
 | `src/lib/queries.ts` | Toda a leitura de dados, com o fallback de demonstração |
 | `src/lib/log-fields.ts` | O que cada tipo de sessão pede para anotar |
+| `src/components/AncorasDaAula.tsx` | Barra grudada com os blocos da aula |
 | `src/lib/sample-data.ts` | Lê `data/*.json` no modo demonstração |
 | `scripts/parse-livro.mjs` | Extrai as 250 aulas do PDF do livro |
 | `src/proxy.ts` | Renova a sessão e protege as rotas |
@@ -123,6 +143,15 @@ chega — e continua a servir de reserva depois.
   [src/lib/log-fields.ts](src/lib/log-fields.ts) — as 250 aulas usam exatamente cinco frases
   de registo, uma por tipo, então o formulário pergunta campo a campo em vez de abrir uma
   caixa de texto.
+
+Em **Aulas** os filtros são dois e combinam entre si — tipo de sessão e mesociclo — e ambos
+sobrevivem à busca. O selo do tipo, dentro da aula, leva para todas as daquele tipo: é assim
+que se compara o progresso numa modalidade só.
+
+A tela da aula passa dos 2.700 px, então tem uma barra que gruda no topo com os blocos que
+aquela aula tem — aquecimento, técnico, principal, níveis, arrefecimento e registo. Ela marca
+em qual bloco você está: por rolagem normalmente, mas o clique ganha enquanto o salto
+acontece, senão o caminho até o destino marcaria os blocos por que passa.
 
 A semana-tipo se repete o ano inteiro: segunda é força, terça é aeróbio, quarta é estações
 e trenó, quinta é técnica e potência, sexta é sessão mista ou teste.

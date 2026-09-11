@@ -14,7 +14,7 @@ export function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-paper/92 backdrop-blur-md">
+    <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-borda bg-fundo/92 backdrop-blur-md">
       <ul className="mx-auto flex max-w-lg">
         {ITEMS.map((item) => {
           const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -26,7 +26,7 @@ export function BottomNav() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={`rotulo relative flex flex-col items-center gap-1.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 text-[10px] font-bold ${
-                  active ? "text-ink" : "text-graphite"
+                  active ? "text-texto" : "text-texto-fraco"
                 }`}
               >
                 {/* A aba ativa não depende só da cor: tem traço e ícone preenchido. */}

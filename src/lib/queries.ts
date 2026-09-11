@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { createClient } from "./supabase/server";
 import { DEMO_COOKIE, isSupabaseConfigured } from "./supabase/config";
 import { sampleLessons, sampleModules, sampleMovements, sampleMovementsForLesson } from "./sample-data";
+import { slugsDoAquecimento } from "./aquecimento";
 import type {
   CourseProgress,
   Lesson,
@@ -143,6 +144,7 @@ function withState(
 
 export type LessonFilters = {
   moduleSlug?: string;
+  sessionType?: string;
   query?: string;
   onlyPending?: boolean;
 };
@@ -158,6 +160,10 @@ export async function listLessons(filters: LessonFilters = {}): Promise<LessonWi
 
   if (filters.moduleSlug) {
     result = result.filter((lesson) => lesson.module?.slug === filters.moduleSlug);
+  }
+
+  if (filters.sessionType) {
+    result = result.filter((lesson) => lesson.session_type === filters.sessionType);
   }
 
   if (filters.onlyPending) {
@@ -184,6 +190,32 @@ export async function listLessons(filters: LessonFilters = {}): Promise<LessonWi
   }
 
   return result;
+}
+
+export type SessionTypeSummary = { tipo: string; total: number; completed: number };
+
+/**
+ * Os tipos de sessão, na ordem da semana: força, aeróbio, estações, técnica,
+ * mista. A ordem sai da própria numeração das aulas, não de uma lista à mão.
+ */
+export async function listSessionTypes(): Promise<SessionTypeSummary[]> {
+  const [lessons, completed] = await Promise.all([fetchLessons(), getCompletedLessonIds()]);
+  const porTipo = new Map<string, SessionTypeSummary>();
+
+  for (const lesson of [...lessons].sort((a, b) => a.number - b.number)) {
+    if (!lesson.session_type) continue;
+
+    const atual = porTipo.get(lesson.session_type) ?? {
+      tipo: lesson.session_type,
+      total: 0,
+      completed: 0,
+    };
+    atual.total += 1;
+    if (completed.has(lesson.id)) atual.completed += 1;
+    porTipo.set(lesson.session_type, atual);
+  }
+
+  return [...porTipo.values()];
 }
 
 export type ModuleSummary = Module & { total: number; completed: number };
@@ -240,11 +272,19 @@ export async function getLessonBySlug(slug: string): Promise<LessonDetail | null
   if (index === -1) return null;
 
   const lesson = lessons[index];
-  const [movements, log, previousLog] = await Promise.all([
+  const [movements, log, previousLog, todos] = await Promise.all([
     fetchLessonMovements(lesson),
     getLessonLog(lesson.id),
     getPreviousLogForType(lesson.id, lesson.session_type),
+    fetchMovements(),
   ]);
+
+  const porSlug = new Map(todos.map((movimento) => [movimento.slug, movimento]));
+  const linkableMovements = todos.map(({ slug, name }) => ({ slug, name }));
+  const warmupMovements = slugsDoAquecimento(lesson.warmup).flatMap((slug) => {
+    const movimento = porSlug.get(slug);
+    return movimento ? [movimento] : [];
+  });
   const neighbour = (offset: number) => {
     const found = lessons[index + offset];
     return found ? { number: found.number, slug: found.slug, title: found.title } : null;
@@ -253,6 +293,8 @@ export async function getLessonBySlug(slug: string): Promise<LessonDetail | null
   return {
     ...lesson,
     movements,
+    warmupMovements,
+    linkableMovements,
     log,
     previousLog,
     previous: neighbour(-1),
@@ -357,16 +399,16 @@ export async function getPreviousLogForType(
 
 export type MovementFilters = { query?: string; category?: string };
 
-export async function listMovements(filters: MovementFilters = {}): Promise<Movement[]> {
+const fetchMovements = cache(async function fetchMovements(): Promise<Movement[]> {
   const supabase = await createClient();
-  let movements: Movement[];
+  if (!supabase) return sampleMovements;
 
-  if (supabase) {
-    const { data } = await supabase.from("movements").select("*").order("position").order("name");
-    movements = (data as Movement[] | null) ?? [];
-  } else {
-    movements = sampleMovements;
-  }
+  const { data } = await supabase.from("movements").select("*").order("position").order("name");
+  return (data as Movement[] | null) ?? [];
+});
+
+export async function listMovements(filters: MovementFilters = {}): Promise<Movement[]> {
+  let movements = await fetchMovements();
 
   if (filters.category) {
     movements = movements.filter((movement) => movement.category === filters.category);

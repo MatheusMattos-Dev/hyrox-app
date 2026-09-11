@@ -19,26 +19,26 @@ export function LessonRow({ lesson, showModule = false }: { lesson: LessonWithSt
     <li>
       <Link
         href={`/aulas/${lesson.slug}`}
-        className="flex items-start gap-4 border-b border-line py-3.5 active:bg-paper-alt"
+        className="flex items-start gap-4 border-b border-borda py-3.5 active:bg-superficie"
       >
         <span
           className={`tnum mt-0.5 w-11 shrink-0 py-1 text-center text-[14px] font-semibold ${
-            lesson.completed ? "bg-ember text-ink" : "text-graphite"
+            lesson.completed ? "bg-ember text-ink" : "text-texto-fraco"
           }`}
         >
           {String(lesson.number).padStart(3, "0")}
         </span>
 
         <span className="min-w-0 flex-1">
-          <span className="block text-[15px] font-semibold leading-snug text-ink">
+          <span className="block text-[15px] font-semibold leading-snug text-texto">
             {capitalizarTitulo(lesson.title)}
           </span>
-          {legenda ? <span className="mt-0.5 block text-[13px] text-graphite">{legenda}</span> : null}
+          {legenda ? <span className="mt-0.5 block text-[13px] text-texto-fraco">{legenda}</span> : null}
         </span>
 
         <span className="mt-1 shrink-0 text-right">
           {lesson.week ? (
-            <span className="tnum block text-[13px] text-graphite">S{String(lesson.week).padStart(2, "0")}</span>
+            <span className="tnum block text-[13px] text-texto-fraco">S{String(lesson.week).padStart(2, "0")}</span>
           ) : null}
           {lesson.deload ? (
             <span className="rotulo mt-0.5 inline-block bg-rope px-1.5 py-0.5 text-[10px] text-ink">

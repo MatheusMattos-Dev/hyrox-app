@@ -12,15 +12,15 @@ export function UltimoRegisto({ entry }: { entry: LogEntry }) {
   if (linhas.length === 0 && !entry.notes) return null;
 
   return (
-    <section className="border-l-2 border-ink bg-paper-alt py-3 pl-4 pr-4">
+    <section className="border-l-2 border-texto bg-superficie py-3 pl-4 pr-4">
       <div className="flex items-baseline justify-between gap-3">
-        <h2 className="rotulo text-[10px] text-graphite">
+        <h2 className="rotulo text-[10px] text-texto-fraco">
           Da última vez
           {entry.lesson.session_type ? ` · ${capitalizar(entry.lesson.session_type)}` : ""}
         </h2>
         <Link
           href={`/aulas/${entry.lesson.slug}`}
-          className="tnum shrink-0 text-[12px] text-graphite underline underline-offset-4"
+          className="tnum shrink-0 text-[12px] text-texto-fraco underline underline-offset-4"
         >
           {String(entry.lesson.number).padStart(3, "0")} · {formatarData(entry.performed_on)}
         </Link>
@@ -30,11 +30,11 @@ export function UltimoRegisto({ entry }: { entry: LogEntry }) {
         <dl className="mt-2 grid grid-cols-2 gap-x-4 gap-y-2">
           {linhas.map((linha) => (
             <div key={linha.chave} className={linha.valor.length > 14 ? "col-span-2" : ""}>
-              <dt className="rotulo text-[9px] text-graphite">{linha.rotulo}</dt>
+              <dt className="rotulo text-[9px] text-texto-fraco">{linha.rotulo}</dt>
               <dd className="tnum mt-0.5 text-[16px] leading-tight">
                 {linha.valor}
                 {linha.unidade ? (
-                  <span className="ml-1 text-[12px] text-graphite">{linha.unidade}</span>
+                  <span className="ml-1 text-[12px] text-texto-fraco">{linha.unidade}</span>
                 ) : null}
               </dd>
             </div>

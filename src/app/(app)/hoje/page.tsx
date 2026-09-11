@@ -22,8 +22,8 @@ export default async function TodayPage() {
   return (
     <main className="px-5 pt-10">
       <header className="flex items-baseline justify-between">
-        <span className="rotulo text-[11px] text-ink">Master Class</span>
-        <Link href="/perfil" className="text-[13px] font-semibold text-graphite">
+        <span className="rotulo text-[11px] text-texto">Master Class</span>
+        <Link href="/perfil" className="text-[13px] font-semibold text-texto-fraco">
           {firstName}
         </Link>
       </header>
@@ -34,7 +34,7 @@ export default async function TodayPage() {
           <span className="display text-[92px] font-bold">
             {String(progress.completed).padStart(3, "0")}
           </span>
-          <span className="rotulo mt-2 text-[10px] text-graphite">
+          <span className="rotulo mt-2 text-[10px] text-texto-fraco">
             de {progress.total} aulas
           </span>
         </div>
@@ -42,12 +42,12 @@ export default async function TodayPage() {
 
       {current ? (
         <section className="mt-8">
-          <h2 className="rotulo text-[11px] text-graphite">
+          <h2 className="rotulo text-[11px] text-texto-fraco">
             {progress.completed === 0 ? "Comece por aqui" : "Continuar de onde parou"}
           </h2>
           <Link
             href={`/aulas/${current.slug}`}
-            className="mt-3 block bg-ink-2 p-5 text-paper"
+            className="mt-3 block border border-line-ink bg-ink-2 p-5 text-paper"
           >
             <span className="flex items-baseline gap-3">
               <span className="tnum text-[14px] font-semibold text-ember">
@@ -75,9 +75,9 @@ export default async function TodayPage() {
 
       {upcoming.length > 0 ? (
         <section className="mt-9">
-          <div className="flex items-baseline justify-between border-b border-ink pb-1.5">
+          <div className="flex items-baseline justify-between border-b border-texto pb-1.5">
             <h2 className="rotulo text-[12px]">Na sequência</h2>
-            <Link href="/aulas" className="text-[13px] font-semibold text-graphite">
+            <Link href="/aulas" className="text-[13px] font-semibold text-texto-fraco">
               Todas
             </Link>
           </div>
@@ -91,9 +91,9 @@ export default async function TodayPage() {
 
       {movements.length > 0 ? (
         <section className="mt-9 pb-10">
-          <div className="flex items-baseline justify-between border-b border-ink pb-1.5">
+          <div className="flex items-baseline justify-between border-b border-texto pb-1.5">
             <h2 className="rotulo text-[12px]">Movimentos</h2>
-            <Link href="/movimentos" className="text-[13px] font-semibold text-graphite">
+            <Link href="/movimentos" className="text-[13px] font-semibold text-texto-fraco">
               Biblioteca
             </Link>
           </div>

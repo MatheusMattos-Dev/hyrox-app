@@ -87,7 +87,7 @@ export default async function LoginPage({
               </button>
               <p className="mt-3 text-[13px] leading-relaxed text-paper/55">
                 O login com Google entra em cena assim que as chaves do Supabase estiverem no
-                <code className="mx-1 bg-paper/10 px-1 py-0.5 font-mono text-paper">
+                <code className="mx-1 bg-fundo/10 px-1 py-0.5 font-mono text-paper">
                   .env.local
                 </code>
                 . Enquanto isso, o app roda com 250 aulas de exemplo.

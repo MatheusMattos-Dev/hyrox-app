@@ -6,15 +6,15 @@ export function MovementTile({ movement }: { movement: Movement }) {
   return (
     <Link href={`/movimentos/${movement.slug}`} className="group block">
       <MovementMedia movement={movement} />
-      <p className="mt-2 text-[14px] font-semibold leading-tight text-ink">{movement.name}</p>
-      {movement.category ? <p className="text-[12px] text-graphite">{movement.category}</p> : null}
+      <p className="mt-2 text-[14px] font-semibold leading-tight text-texto">{movement.name}</p>
+      {movement.category ? <p className="text-[12px] text-texto-fraco">{movement.category}</p> : null}
     </Link>
   );
 }
 
 export function MovementMedia({
   movement,
-  className = "aspect-[4/3]",
+  className = "aspect-video",
 }: {
   movement: Movement;
   className?: string;
@@ -27,18 +27,18 @@ export function MovementMedia({
         src={movement.gif_url}
         alt={`Execução do movimento ${movement.name}`}
         loading="lazy"
-        className={`w-full rounded-panel bg-paper-alt object-cover ${className}`}
+        className={`w-full rounded-panel bg-[#fcfbfc] object-cover ${className}`}
       />
     );
   }
 
   return (
     <div
-      className={`relative w-full rounded-panel border border-line bg-paper-alt ${className}`}
+      className={`relative w-full rounded-panel border border-borda bg-superficie ${className}`}
       role="img"
       aria-label={`Desenho do movimento ${movement.name}. GIF ainda não cadastrado.`}
     >
-      <div className="absolute inset-0 flex items-center justify-center p-[13%] text-graphite">
+      <div className="absolute inset-0 flex items-center justify-center p-[13%] text-texto-fraco">
         <MovementGlyph slug={movement.slug} name={movement.name} />
       </div>
     </div>

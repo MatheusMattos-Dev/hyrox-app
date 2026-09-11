@@ -1,0 +1,132 @@
+[
+  {
+    "slug": "ponte-de-gluteo",
+    "name": "Ponte de glúteo",
+    "category": "Aquecimento",
+    "description": "Anca sobe pela contração do glúteo, não pela lombar. Costelas para baixo.",
+    "cues": [
+      "Empurrar o calcanhar contra o chão",
+      "Parar em cima sem arquear a lombar"
+    ]
+  },
+  {
+    "slug": "remada-com-banda",
+    "name": "Remada com banda",
+    "category": "Aquecimento",
+    "description": "Omoplata inicia o movimento. Cotovelo rente ao tronco.",
+    "cues": [
+      "Juntar as omoplatas antes de dobrar o cotovelo",
+      "Retorno controlado"
+    ]
+  },
+  {
+    "slug": "abducao-com-banda",
+    "name": "Abdução com banda",
+    "category": "Aquecimento",
+    "description": "Abre a anca contra a banda sem rodar o tronco.",
+    "cues": [
+      "Tronco parado",
+      "Movimento vem da anca, não da cintura"
+    ]
+  },
+  {
+    "slug": "avanco-com-rotacao",
+    "name": "Avanço com rotação",
+    "category": "Aquecimento",
+    "description": "Roda o tronco sobre a perna da frente, com a anca estável.",
+    "cues": [
+      "Joelho da frente alinhado",
+      "Roda o peito, não só os braços"
+    ]
+  },
+  {
+    "slug": "balanco-de-perna",
+    "name": "Balanço de perna",
+    "category": "Aquecimento",
+    "description": "Amplitude cresce a cada repetição, sem compensar com a lombar.",
+    "cues": [
+      "Tronco alto e parado",
+      "Amplitude progressiva"
+    ]
+  },
+  {
+    "slug": "rotacao-de-ombro-com-bastao",
+    "name": "Rotação de ombro com bastão",
+    "category": "Aquecimento",
+    "description": "Pega larga que permita passar o bastão sem dobrar o cotovelo.",
+    "cues": [
+      "Cotovelo esticado o percurso todo",
+      "Fechar a pega só quando passar limpo"
+    ]
+  },
+  {
+    "slug": "elevacao-de-calcanhar",
+    "name": "Elevação de calcanhar",
+    "category": "Aquecimento",
+    "description": "Sobe até ao topo do movimento e desce abaixo do nível do degrau.",
+    "cues": [
+      "Amplitude completa",
+      "Sem saltar"
+    ]
+  },
+  {
+    "slug": "joelhos-altos",
+    "name": "Joelhos altos",
+    "category": "Aquecimento",
+    "description": "Cadência alta com contacto curto no chão.",
+    "cues": [
+      "Contacto sob o centro de massa",
+      "Anca alta"
+    ]
+  },
+  {
+    "slug": "calcanhares-aos-gluteos",
+    "name": "Calcanhares aos glúteos",
+    "category": "Aquecimento",
+    "description": "Recolhe o calcanhar sem levar a anca à frente.",
+    "cues": [
+      "Coxa quase parada",
+      "Tronco alto"
+    ]
+  },
+  {
+    "slug": "passada-lateral",
+    "name": "Passada lateral",
+    "category": "Aquecimento",
+    "description": "Anca baixa, pés sem se cruzarem.",
+    "cues": [
+      "Anca baixa o percurso todo",
+      "Passo curto e frequente"
+    ]
+  },
+  {
+    "slug": "salto-a-corda",
+    "name": "Salto à corda",
+    "category": "Aquecimento",
+    "description": "Salto baixo, o pulso é que faz a corda girar.",
+    "cues": [
+      "Cotovelo junto ao corpo",
+      "Salto rasteiro"
+    ]
+  },
+  {
+    "slug": "burpee-lento",
+    "name": "Burpee a ritmo lento",
+    "category": "Aquecimento",
+    "description": "No aquecimento o burpee é para subir a temperatura, não para competir.",
+    "cues": [
+      "Descida controlada",
+      "Ritmo que permite falar"
+    ]
+  },
+  {
+    "slug": "skierg",
+    "name": "SkiErg",
+    "category": "Aquecimento",
+    "description": "Puxada vem da anca e do tronco, não só dos braços.",
+    "cues": [
+      "Fechar a anca a cada puxada",
+      "Braços terminam ao lado das coxas"
+    ]
+  }
+]

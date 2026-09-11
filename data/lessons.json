@@ -359,7 +359,7 @@
   "technique_movement": "transporte-com-carga",
   "technique_cue": "Ombros para trás e para baixo · passada curta.",
   "technique_sheet": "20",
-  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 15 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição Seguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
+  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 15 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição\nSeguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% da de competição",
@@ -407,7 +407,7 @@
   "technique_movement": "burpee-broad-jump",
   "technique_cue": "Receção absorvida com anca e joelho · distância submáxima constante.",
   "technique_sheet": "19",
-  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra.\nDescanso conforme necessário.",
+  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra. Descanso conforme necessário.",
   "levels": {
    "n1": {
     "carga": "Velocidade calculada a 90%",
@@ -743,7 +743,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -1175,7 +1175,7 @@
   "technique_movement": "wall-ball",
   "technique_cue": "Anca abaixo do paralelo · lançamento sincronizado com a extensão.",
   "technique_sheet": "03",
-  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição Sempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
+  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição\nSempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
   "levels": {
    "n1": {
     "carga": "Metade das distâncias e repetições",
@@ -1415,7 +1415,7 @@
   "technique_movement": "wall-ball",
   "technique_cue": "Anca abaixo do paralelo · lançamento sincronizado com a extensão.",
   "technique_sheet": "03",
-  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição Sempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
+  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição\nSempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
   "levels": {
    "n1": {
     "carga": "Metade das distâncias e repetições",
@@ -1703,7 +1703,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -2039,7 +2039,7 @@
   "technique_movement": "transporte-com-carga",
   "technique_cue": "Ombros para trás e para baixo · passada curta.",
   "technique_sheet": "20",
-  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 20 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição Seguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
+  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 20 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição\nSeguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% da de competição",
@@ -2087,7 +2087,7 @@
   "technique_movement": "burpee-broad-jump",
   "technique_cue": "Receção absorvida com anca e joelho · distância submáxima constante.",
   "technique_sheet": "19",
-  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra.\nDescanso conforme necessário.",
+  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra. Descanso conforme necessário.",
   "levels": {
    "n1": {
     "carga": "Velocidade calculada a 90%",
@@ -2519,7 +2519,7 @@
   "technique_movement": "transporte-com-carga",
   "technique_cue": "Ombros para trás e para baixo · passada curta.",
   "technique_sheet": "20",
-  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 20 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição Seguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
+  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 20 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição\nSeguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% da de competição",
@@ -2567,7 +2567,7 @@
   "technique_movement": "burpee-broad-jump",
   "technique_cue": "Receção absorvida com anca e joelho · distância submáxima constante.",
   "technique_sheet": "19",
-  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra.\nDescanso conforme necessário.",
+  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra. Descanso conforme necessário.",
   "levels": {
    "n1": {
     "carga": "Velocidade calculada a 90%",
@@ -2663,7 +2663,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -3095,7 +3095,7 @@
   "technique_movement": "wall-ball",
   "technique_cue": "Anca abaixo do paralelo · lançamento sincronizado com a extensão.",
   "technique_sheet": "03",
-  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição Sempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
+  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição\nSempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
   "levels": {
    "n1": {
     "carga": "Metade das distâncias e repetições",
@@ -3623,7 +3623,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -4199,7 +4199,7 @@
   "technique_movement": "transporte-com-carga",
   "technique_cue": "Ombros para trás e para baixo · passada curta.",
   "technique_sheet": "20",
-  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 25 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição Seguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
+  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 25 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição\nSeguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% da de competição",
@@ -4247,7 +4247,7 @@
   "technique_movement": "burpee-broad-jump",
   "technique_cue": "Receção absorvida com anca e joelho · distância submáxima constante.",
   "technique_sheet": "19",
-  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra.\nDescanso conforme necessário.",
+  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra. Descanso conforme necessário.",
   "levels": {
    "n1": {
     "carga": "Velocidade calculada a 90%",
@@ -4583,7 +4583,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -4775,7 +4775,7 @@
   "technique_movement": "wall-ball",
   "technique_cue": "Anca abaixo do paralelo · lançamento sincronizado com a extensão.",
   "technique_sheet": "03",
-  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição Sempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
+  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição\nSempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
   "levels": {
    "n1": {
     "carga": "Metade das distâncias e repetições",
@@ -5015,7 +5015,7 @@
   "technique_movement": "wall-ball",
   "technique_cue": "Anca abaixo do paralelo · lançamento sincronizado com a extensão.",
   "technique_sheet": "03",
-  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição Sempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
+  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição\nSempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
   "levels": {
    "n1": {
     "carga": "Metade das distâncias e repetições",
@@ -5543,7 +5543,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -5879,7 +5879,7 @@
   "technique_movement": "transporte-com-carga",
   "technique_cue": "Ombros para trás e para baixo · passada curta.",
   "technique_sheet": "20",
-  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 25 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição Seguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
+  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 25 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição\nSeguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% da de competição",
@@ -5927,7 +5927,7 @@
   "technique_movement": "burpee-broad-jump",
   "technique_cue": "Receção absorvida com anca e joelho · distância submáxima constante.",
   "technique_sheet": "19",
-  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra.\nDescanso conforme necessário.",
+  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra. Descanso conforme necessário.",
   "levels": {
    "n1": {
     "carga": "Velocidade calculada a 90%",
@@ -6359,7 +6359,7 @@
   "technique_movement": "transporte-com-carga",
   "technique_cue": "Ombros para trás e para baixo · passada curta.",
   "technique_sheet": "20",
-  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 25 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição Seguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
+  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 25 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição\nSeguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% da de competição",
@@ -6407,7 +6407,7 @@
   "technique_movement": "burpee-broad-jump",
   "technique_cue": "Receção absorvida com anca e joelho · distância submáxima constante.",
   "technique_sheet": "19",
-  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra.\nDescanso conforme necessário.",
+  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra. Descanso conforme necessário.",
   "levels": {
    "n1": {
     "carga": "Velocidade calculada a 90%",
@@ -6503,7 +6503,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -6695,7 +6695,7 @@
   "technique_movement": "wall-ball",
   "technique_cue": "Anca abaixo do paralelo · lançamento sincronizado com a extensão.",
   "technique_sheet": "03",
-  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição Sempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
+  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição\nSempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
   "levels": {
    "n1": {
     "carga": "Metade das distâncias e repetições",
@@ -7463,7 +7463,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -8039,7 +8039,7 @@
   "technique_movement": "transporte-com-carga",
   "technique_cue": "Ombros para trás e para baixo · passada curta.",
   "technique_sheet": "20",
-  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 25 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição Seguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
+  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 25 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição\nSeguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% da de competição",
@@ -8087,7 +8087,7 @@
   "technique_movement": "burpee-broad-jump",
   "technique_cue": "Receção absorvida com anca e joelho · distância submáxima constante.",
   "technique_sheet": "19",
-  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra.\nDescanso conforme necessário.",
+  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra. Descanso conforme necessário.",
   "levels": {
    "n1": {
     "carga": "Velocidade calculada a 90%",
@@ -8375,7 +8375,7 @@
   "technique_movement": "wall-ball",
   "technique_cue": "Anca abaixo do paralelo · lançamento sincronizado com a extensão.",
   "technique_sheet": "03",
-  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição Sempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
+  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição\nSempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
   "levels": {
    "n1": {
     "carga": "Metade das distâncias e repetições",
@@ -8423,7 +8423,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -8519,7 +8519,7 @@
   "technique_movement": "transporte-com-carga",
   "technique_cue": "Ombros para trás e para baixo · passada curta.",
   "technique_sheet": "20",
-  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 40 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição Seguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
+  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 40 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição\nSeguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% da de competição",
@@ -8567,7 +8567,7 @@
   "technique_movement": "burpee-broad-jump",
   "technique_cue": "Receção absorvida com anca e joelho · distância submáxima constante.",
   "technique_sheet": "19",
-  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra.\nDescanso conforme necessário.",
+  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra. Descanso conforme necessário.",
   "levels": {
    "n1": {
     "carga": "Velocidade calculada a 90%",
@@ -8615,7 +8615,7 @@
   "technique_movement": "wall-ball",
   "technique_cue": "Anca abaixo do paralelo · lançamento sincronizado com a extensão.",
   "technique_sheet": "03",
-  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição Sempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
+  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição\nSempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
   "levels": {
    "n1": {
     "carga": "Metade das distâncias e repetições",
@@ -9383,7 +9383,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -10199,7 +10199,7 @@
   "technique_movement": "transporte-com-carga",
   "technique_cue": "Ombros para trás e para baixo · passada curta.",
   "technique_sheet": "20",
-  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 40 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição Seguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
+  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 40 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição\nSeguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% da de competição",
@@ -10247,7 +10247,7 @@
   "technique_movement": "burpee-broad-jump",
   "technique_cue": "Receção absorvida com anca e joelho · distância submáxima constante.",
   "technique_sheet": "19",
-  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra.\nDescanso conforme necessário.",
+  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra. Descanso conforme necessário.",
   "levels": {
    "n1": {
     "carga": "Velocidade calculada a 90%",
@@ -10295,7 +10295,7 @@
   "technique_movement": "wall-ball",
   "technique_cue": "Anca abaixo do paralelo · lançamento sincronizado com a extensão.",
   "technique_sheet": "03",
-  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição Sempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
+  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição\nSempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
   "levels": {
    "n1": {
     "carga": "Metade das distâncias e repetições",
@@ -10343,7 +10343,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -11303,7 +11303,7 @@
   "technique_movement": "puxada",
   "technique_cue": "Omoplata inicia o movimento · extensão completa em baixo.",
   "technique_sheet": "13, 14",
-  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda.\nDescanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
+  "main_block": "A. Levantamento terra 3/2/1 — 2 rondas, repetir após a repetição única, subindo carga na segunda ronda. Descanso 2 a 3 min.\nB. Supino 3/2/1 — 2 rondas, mesma lógica. Descanso 2 a 3 min.\nC. Monster sets, 3 rondas com 2 min de descanso: flexões máximas · remadas em suspensão máximas · kettlebell clean and jerk máximo.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% do estimado, amplitude parcial se necessário",
@@ -11879,7 +11879,7 @@
   "technique_movement": "transporte-com-carga",
   "technique_cue": "Ombros para trás e para baixo · passada curta.",
   "technique_sheet": "20",
-  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 50 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição Seguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
+  "main_block": "4 rondas:\n· Saltos à corda em ritmo agressivo, 1 min\n· Puxar e empurrar o trenó, 50 m cada\n· Avanços com sandbag, 100 m\n· 25 wall balls à carga de competição\nSeguir com ciclo de fluxo: progressão 5 min até 180 − idade + 15 bpm, manutenção 1 min, avanço ao segundo alvo, manutenção 1 min, regressão 5 min. 2 rondas.",
   "levels": {
    "n1": {
     "carga": "Carga a 60% da de competição",
@@ -11927,7 +11927,7 @@
   "technique_movement": "burpee-broad-jump",
   "technique_cue": "Receção absorvida com anca e joelho · distância submáxima constante.",
   "technique_sheet": "19",
-  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra.\nDescanso conforme necessário.",
+  "main_block": "A. EMOM de 20 min: min 1, distância máxima de corrida em 40 s · min 2, 5-10 agachamentos frontais ao peso corporal · min 3, 20-30 m de burpee broad jump · min 4, descanso completo. 5 ciclos.\nB. 3 rondas: máximo de flexões · máximo de saltos à caixa · máximo de elevações de joelhos à barra. Descanso conforme necessário.",
   "levels": {
    "n1": {
     "carga": "Velocidade calculada a 90%",
@@ -11975,7 +11975,7 @@
   "technique_movement": "wall-ball",
   "technique_cue": "Anca abaixo do paralelo · lançamento sincronizado com a extensão.",
   "technique_sheet": "03",
-  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição Sempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
+  "main_block": "Por tempo:\n· 100 cal de remo\n· 150 wall balls à carga de competição\nSempre que parar nos wall balls, executar 8 burpees sobre o remo antes de retomar.\nRegistar o tempo total e o número de paragens.",
   "levels": {
    "n1": {
     "carga": "Metade das distâncias e repetições",

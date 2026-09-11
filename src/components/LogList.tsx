@@ -15,9 +15,9 @@ export function LogList({ entries }: { entries: LogEntry[] }) {
         const marcados = resumoDoRegisto(entry, entry.lesson);
 
         return (
-          <li key={entry.lesson_id} className="border-b border-line py-5 last:border-0">
+          <li key={entry.lesson_id} className="border-b border-borda py-5 last:border-0">
             <Link href={`/aulas/${entry.lesson.slug}`} className="block">
-              <span className="rotulo flex items-baseline justify-between text-[10px] text-graphite">
+              <span className="rotulo flex items-baseline justify-between text-[10px] text-texto-fraco">
                 <span>
                   {entry.lesson.session_type ? capitalizar(entry.lesson.session_type) : "Aula"}
                   {" · "}
@@ -37,11 +37,11 @@ export function LogList({ entries }: { entries: LogEntry[] }) {
                     key={campo.chave}
                     className={campo.valor.length > 14 ? "col-span-2" : ""}
                   >
-                    <dt className="rotulo text-[9px] text-graphite">{campo.rotulo}</dt>
+                    <dt className="rotulo text-[9px] text-texto-fraco">{campo.rotulo}</dt>
                     <dd className="tnum mt-0.5 text-[17px] leading-tight">
                       {campo.valor}
                       {campo.unidade ? (
-                        <span className="ml-1 text-[12px] text-graphite">{campo.unidade}</span>
+                        <span className="ml-1 text-[12px] text-texto-fraco">{campo.unidade}</span>
                       ) : null}
                     </dd>
                   </div>
@@ -50,7 +50,7 @@ export function LogList({ entries }: { entries: LogEntry[] }) {
             ) : null}
 
             {entry.notes ? (
-              <p className="prose-coach mt-4 border-l-2 border-line pl-3 text-[15px]">
+              <p className="prose-coach mt-4 border-l-2 border-borda pl-3 text-[15px]">
                 {entry.notes}
               </p>
             ) : null}

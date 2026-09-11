@@ -13,14 +13,14 @@ export function Circuito({ completed, total }: { completed: number; total: numbe
       role="img"
       aria-label={`${completed} de ${total} aulas concluídas, ${percentagem}% do percurso`}
     >
-      <path d={PISTA} pathLength={1} fill="none" stroke="var(--color-line)" strokeWidth="1.5" />
+      <path d={PISTA} pathLength={1} fill="none" stroke="var(--borda)" strokeWidth="1.5" />
 
       {/* Uma marca por mesociclo, a cada cinco semanas. */}
       <path
         d={PISTA}
         pathLength={1}
         fill="none"
-        stroke="var(--color-ink)"
+        stroke="var(--texto)"
         strokeOpacity="0.3"
         strokeWidth="9"
         strokeDasharray="0.003 0.097"
@@ -38,7 +38,7 @@ export function Circuito({ completed, total }: { completed: number; total: numbe
       ) : null}
 
       {/* Linha de partida, no topo. */}
-      <rect x="148.5" y="1" width="3" height="10" fill="var(--color-ink)" />
+      <rect x="148.5" y="1" width="3" height="10" fill="var(--texto)" />
     </svg>
   );
 }

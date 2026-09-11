@@ -64,9 +64,13 @@ function defineRunners() {
     },
 
     async movements() {
-      const rows = await readData("movements");
-      if (!rows) return;
+      // Os doze do livro saem do parser; os de aquecimento são uma curadoria
+      // à parte, num arquivo próprio, para o parser continuar fiel ao PDF.
+      const doLivro = await readData("movements");
+      const doAquecimento = (await readData("aquecimento")) ?? [];
+      if (!doLivro) return;
 
+      const rows = [...doLivro, ...doAquecimento];
       const payload = rows.map((row, index) => ({
         slug: row.slug,
         name: row.name,

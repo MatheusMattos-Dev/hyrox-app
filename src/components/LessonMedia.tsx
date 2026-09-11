@@ -33,7 +33,7 @@ export function LessonMedia({ lesson }: { lesson: Lesson }) {
       <img
         src={url}
         alt={`Demonstração da aula ${lesson.number}`}
-        className="aspect-video w-full rounded-panel bg-paper-alt object-cover"
+        className="aspect-video w-full rounded-panel bg-superficie object-cover"
       />
     );
   }
@@ -43,7 +43,7 @@ export function LessonMedia({ lesson }: { lesson: Lesson }) {
 
     if (embed) {
       return (
-        <div className="aspect-video w-full overflow-hidden rounded-panel bg-paper-alt">
+        <div className="aspect-video w-full overflow-hidden rounded-panel bg-superficie">
           <iframe
             src={embed}
             title={lesson.title}
@@ -61,15 +61,15 @@ export function LessonMedia({ lesson }: { lesson: Lesson }) {
         controls
         playsInline
         preload="metadata"
-        className="aspect-video w-full rounded-panel bg-paper-alt"
+        className="aspect-video w-full rounded-panel bg-superficie"
       />
     );
   }
 
   return (
-    <div className="flex aspect-[16/9] w-full flex-col justify-between rounded-panel border border-line bg-paper-alt p-5">
-      <span className="rotulo text-[11px] text-graphite">Aula em texto</span>
-      <span className="display text-[72px] text-line">
+    <div className="flex aspect-[16/9] w-full flex-col justify-between rounded-panel border border-borda bg-superficie p-5">
+      <span className="rotulo text-[11px] text-texto-fraco">Aula em texto</span>
+      <span className="display text-[72px] text-borda">
         {String(lesson.number).padStart(3, "0")}
       </span>
     </div>

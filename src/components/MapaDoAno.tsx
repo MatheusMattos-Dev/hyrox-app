@@ -24,8 +24,8 @@ export function MapaDoAno({ lessons }: { lessons: LessonWithState[] }) {
                 lesson.completed
                   ? "bg-ember"
                   : lesson.deload
-                    ? "bg-ink/8"
-                    : "bg-ink/20"
+                    ? "bg-texto/10"
+                    : "bg-texto/25"
               }`}
             />
           ))}

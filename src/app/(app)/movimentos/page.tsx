@@ -17,7 +17,7 @@ export default async function MovementsPage({
     <main className="pt-10">
       <header className="px-5">
         <h1 className="display text-[38px] uppercase">Movimentos</h1>
-        <p className="mt-1 max-w-[34ch] text-[14px] leading-snug text-graphite">
+        <p className="mt-1 max-w-[34ch] text-[14px] leading-snug text-texto-fraco">
           Como executar cada movimento, em GIF, para conferir na hora do treino.
         </p>
 
@@ -27,7 +27,7 @@ export default async function MovementsPage({
             name="q"
             defaultValue={q ?? ""}
             placeholder="Buscar movimento"
-            className="w-full border border-line bg-paper-alt px-4 py-3 text-[15px] text-ink placeholder:text-graphite focus:border-ink focus:outline-none"
+            className="w-full border border-borda bg-superficie px-4 py-3 text-[15px] text-texto placeholder:text-texto-fraco focus:border-texto focus:outline-none"
           />
           {tipo ? <input type="hidden" name="tipo" value={tipo} /> : null}
         </form>
@@ -49,9 +49,9 @@ export default async function MovementsPage({
 
       <section className="mt-6 px-5 pb-12">
         {movements.length === 0 ? (
-          <div className="border border-line bg-paper-alt px-5 py-8">
+          <div className="border border-borda bg-superficie px-5 py-8">
             <p className="text-[15px] font-semibold">Nenhum movimento encontrado.</p>
-            <p className="mt-1 text-[14px] text-graphite">
+            <p className="mt-1 text-[14px] text-texto-fraco">
               A biblioteca cresce conforme os GIFs são importados.
             </p>
             <Link
@@ -80,7 +80,7 @@ function Chip({ href, label, active }: { href: string; label: string; active: bo
     <Link
       href={href}
       className={`shrink-0 whitespace-nowrap border px-3.5 py-1.5 text-[13px] font-semibold ${
-        active ? "border-ember bg-ember text-ink" : "border-line bg-paper-alt text-graphite"
+        active ? "border-ember bg-ember text-ink" : "border-borda bg-superficie text-texto-fraco"
       }`}
     >
       {label}

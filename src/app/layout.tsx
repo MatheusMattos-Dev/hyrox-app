@@ -41,7 +41,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ece7de",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ece7de" },
+    { media: "(prefers-color-scheme: dark)", color: "#14120c" },
+  ],
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -55,7 +58,17 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       className={`${bigShoulders.variable} ${plexSans.variable} ${plexMono.variable} ${plexSerif.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        {/* Aplica a escolha de tema antes da primeira pintura. Sem isto, quem
+            escolheu escuro vê um lampejo de papel a cada carregamento. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("mc_tema");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

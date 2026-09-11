@@ -92,6 +92,10 @@ export type LessonWithState = Lesson & {
 
 export type LessonDetail = LessonWithState & {
   movements: Movement[];
+  /** Os exercícios que as linhas de aquecimento nomeiam. */
+  warmupMovements: Movement[];
+  /** Nome e slug de cada movimento, para os ligar dentro do texto da aula. */
+  linkableMovements: Array<Pick<Movement, "slug" | "name">>;
   log: LessonLog | null;
   /** O registo mais recente de outra aula do mesmo tipo de sessão. */
   previousLog: LogEntry | null;

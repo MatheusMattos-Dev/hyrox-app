@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AncorasDaAula, type Ancora } from "@/components/AncorasDaAula";
 import { CompleteButton } from "@/components/CompleteButton";
 import { LessonMedia } from "@/components/LessonMedia";
 import { LogForm } from "@/components/LogForm";
 import { UltimoRegisto } from "@/components/UltimoRegisto";
 import { MovementMedia } from "@/components/MovementTile";
+import { RailDeMovimentos } from "@/components/RailDeMovimentos";
 import { capitalizar, capitalizarTitulo } from "@/lib/format";
 import { getLessonBySlug } from "@/lib/queries";
+import { vincularMovimentos } from "@/lib/vincular-movimentos";
 import type { LessonDetail } from "@/lib/types";
 
 export default async function LessonPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -18,14 +21,23 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   const movement = lesson.movements[0] ?? null;
   const numero = String(lesson.number).padStart(3, "0");
 
+  const ancoras: Ancora[] = [
+    lesson.warmup?.length ? { id: "aquecimento", rotulo: "Aquecimento" } : null,
+    movement || lesson.technique_cue ? { id: "tecnico", rotulo: "Técnico" } : null,
+    lesson.main_block ? { id: "principal", rotulo: "Principal" } : null,
+    lesson.levels ? { id: "niveis", rotulo: "Níveis" } : null,
+    lesson.cooldown ? { id: "arrefecimento", rotulo: "Arrefecimento" } : null,
+    { id: "registo", rotulo: "Registo" },
+  ].filter((ancora): ancora is Ancora => ancora !== null);
+
   return (
     <main className="px-5 pt-10 pb-12">
-      <Link href="/aulas" className="text-[14px] font-semibold text-graphite">
+      <Link href="/aulas" className="text-[14px] font-semibold text-texto-fraco">
         Voltar para as aulas
       </Link>
 
       <header className="mt-5">
-        <p className="tnum rotulo text-[10px] text-graphite">
+        <p className="tnum rotulo text-[10px] text-texto-fraco">
           {lesson.week ? `Semana ${String(lesson.week).padStart(2, "0")}` : null}
           {lesson.mesocycle ? ` · Mesociclo ${String(lesson.mesocycle).padStart(2, "0")}` : null}
           {lesson.weekday ? ` · ${capitalizar(lesson.weekday)}` : null}
@@ -41,21 +53,29 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         </div>
 
         <ul className="mt-4 flex flex-wrap gap-1.5">
-          {[lesson.session_type, lesson.stimulus, lesson.pathway, lesson.tag]
-            .filter(Boolean)
-            .map((chip) => (
-              <li
-                key={chip}
-                className="border border-line bg-paper-alt px-2.5 py-1 text-[12px] font-semibold text-graphite"
+          {lesson.session_type ? (
+            <li>
+              <Link
+                href={`/aulas?tipo=${encodeURIComponent(lesson.session_type)}`}
+                className="block border border-borda bg-superficie px-2.5 py-1 text-[12px] font-semibold text-texto-fraco underline underline-offset-4"
               >
-                {chip === lesson.tag ? chip : capitalizar(String(chip))}
-              </li>
-            ))}
+                {capitalizar(lesson.session_type)}
+              </Link>
+            </li>
+          ) : null}
+          {[lesson.stimulus, lesson.pathway, lesson.tag].filter(Boolean).map((chip) => (
+            <li
+              key={chip}
+              className="border border-borda bg-superficie px-2.5 py-1 text-[12px] font-semibold text-texto-fraco"
+            >
+              {chip === lesson.tag ? chip : capitalizar(String(chip))}
+            </li>
+          ))}
         </ul>
       </header>
 
       {lesson.deload ? (
-        <p className="mt-5 border-l-2 border-rope bg-paper-alt px-4 py-3 text-[14px] leading-snug">
+        <p className="mt-5 border-l-2 border-rope bg-superficie px-4 py-3 text-[14px] leading-snug">
           <strong className="font-bold">Semana de descarga.</strong> Reduza o volume desta sessão
           para cerca de 45%: menos séries, menos distância, carga mais leve. A técnica fica
           integral — o que baixa é o volume.
@@ -63,17 +83,17 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
       ) : null}
 
       {lesson.equipment || lesson.space ? (
-        <dl className="mt-5 border-t border-line text-[14px]">
+        <dl className="mt-5 border-t border-borda text-[14px]">
           {lesson.equipment ? (
-            <div className="flex gap-4 border-b border-line py-2.5">
+            <div className="flex gap-4 border-b border-borda py-2.5">
               <dt className="w-24 shrink-0 font-semibold">Equipamento</dt>
-              <dd className="text-graphite">{lesson.equipment}</dd>
+              <dd className="text-texto-fraco">{lesson.equipment}</dd>
             </div>
           ) : null}
           {lesson.space ? (
-            <div className="flex gap-4 border-b border-line py-2.5">
+            <div className="flex gap-4 border-b border-borda py-2.5">
               <dt className="w-24 shrink-0 font-semibold">Espaço</dt>
-              <dd className="text-graphite">{lesson.space}</dd>
+              <dd className="text-texto-fraco">{lesson.space}</dd>
             </div>
           ) : null}
         </dl>
@@ -85,32 +105,40 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         </div>
       ) : null}
 
+      <AncorasDaAula ancoras={ancoras} />
+
       {lesson.warmup?.length ? (
-        <Bloco titulo="Aquecimento" minutos={10}>
+        <Bloco id="aquecimento" titulo="Aquecimento" minutos={10}>
           <ul>
             {lesson.warmup.map((item) => (
               <li
                 key={item}
-                className="border-b border-line py-2.5 text-[15px] leading-snug last:border-0"
+                className="border-b border-borda py-2.5 text-[15px] leading-snug last:border-0"
               >
                 {item}
               </li>
             ))}
           </ul>
+
+          {lesson.warmupMovements.length > 0 ? (
+            <div className="mt-4">
+              <RailDeMovimentos movements={lesson.warmupMovements} />
+            </div>
+          ) : null}
         </Bloco>
       ) : null}
 
       {movement || lesson.technique_cue ? (
-        <Bloco titulo="Bloco técnico" minutos={8}>
+        <Bloco id="tecnico" titulo="Bloco técnico" minutos={8}>
           {movement ? (
             <Link href={`/movimentos/${movement.slug}`} className="flex items-center gap-4">
-              <span className="w-[84px] shrink-0">
-                <MovementMedia movement={movement} className="aspect-square" />
+              <span className="w-[112px] shrink-0">
+                <MovementMedia movement={movement} />
               </span>
               <span className="min-w-0">
                 <span className="block text-[16px] font-bold leading-tight">{movement.name}</span>
                 {lesson.technique_cue ? (
-                  <span className="mt-1 block text-[14px] leading-snug text-graphite">
+                  <span className="mt-1 block text-[14px] leading-snug text-texto-fraco">
                     {lesson.technique_cue}
                   </span>
                 ) : null}
@@ -123,7 +151,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
             <p className="text-[15px] leading-snug">{lesson.technique_cue}</p>
           )}
           {lesson.technique_sheet ? (
-            <p className="mt-3 text-[13px] text-graphite">
+            <p className="mt-3 text-[13px] text-texto-fraco">
               Manual técnico: ficha {lesson.technique_sheet}, capítulo 06.
             </p>
           ) : null}
@@ -131,7 +159,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
       ) : null}
 
       {lesson.main_block ? (
-        <Bloco titulo="Bloco principal" minutos={32} destaque>
+        <Bloco id="principal" titulo="Bloco principal" minutos={32} destaque>
           <p className="whitespace-pre-line text-[15px] leading-relaxed">{lesson.main_block}</p>
         </Bloco>
       ) : null}
@@ -139,7 +167,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
       {lesson.levels ? <Niveis lesson={lesson} /> : null}
 
       {lesson.cooldown ? (
-        <Bloco titulo="Arrefecimento" minutos={10}>
+        <Bloco id="arrefecimento" titulo="Arrefecimento" minutos={10}>
           <p className="text-[15px] leading-snug">{lesson.cooldown}</p>
         </Bloco>
       ) : null}
@@ -151,13 +179,12 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         ) : null}
       </section>
 
-      {lesson.previousLog ? (
-        <div className="mt-9">
-          <UltimoRegisto entry={lesson.previousLog} />
-        </div>
-      ) : null}
-
-      <div className={lesson.previousLog ? "mt-4" : "mt-9"}>
+      <div id="registo" className="mt-9 scroll-mt-16">
+        {lesson.previousLog ? (
+          <div className="mb-4">
+            <UltimoRegisto entry={lesson.previousLog} />
+          </div>
+        ) : null}
         <LogForm lesson={lesson} />
       </div>
 
@@ -165,10 +192,10 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         <CompleteButton lessonId={lesson.id} completed={lesson.completed} />
       </div>
 
-      <nav className="mt-8 flex gap-3 border-t border-line pt-4">
+      <nav className="mt-8 flex gap-3 border-t border-borda pt-4">
         {lesson.previous ? (
           <Link href={`/aulas/${lesson.previous.slug}`} className="flex-1">
-            <span className="tnum rotulo block text-[10px] text-graphite">
+            <span className="tnum rotulo block text-[10px] text-texto-fraco">
               Aula {String(lesson.previous.number).padStart(3, "0")}
             </span>
             <span className="mt-1 block text-[14px] font-semibold leading-tight">
@@ -181,7 +208,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
 
         {lesson.next ? (
           <Link href={`/aulas/${lesson.next.slug}`} className="flex-1 text-right">
-            <span className="tnum rotulo block text-[10px] text-graphite">
+            <span className="tnum rotulo block text-[10px] text-texto-fraco">
               Aula {String(lesson.next.number).padStart(3, "0")}
             </span>
             <span className="mt-1 block text-[14px] font-semibold leading-tight">
@@ -195,23 +222,25 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
 }
 
 function Bloco({
+  id,
   titulo,
   minutos,
   destaque = false,
   children,
 }: {
+  id: string;
   titulo: string;
   minutos: number;
   destaque?: boolean;
   children: React.ReactNode;
 }) {
   return (
-    <section className="mt-8">
-      <div className="flex items-baseline justify-between border-b border-ink pb-1.5">
+    <section id={id} className="mt-8 scroll-mt-16">
+      <div className="flex items-baseline justify-between border-b border-texto pb-1.5">
         <h2 className="rotulo text-[12px]">{titulo}</h2>
-        <span className="tnum text-[13px] text-graphite">{minutos} min</span>
+        <span className="tnum text-[13px] text-texto-fraco">{minutos} min</span>
       </div>
-      <div className={destaque ? "mt-3 border border-line bg-paper-alt p-4" : "mt-3"}>{children}</div>
+      <div className={destaque ? "mt-3 border border-borda bg-superficie p-4" : "mt-3"}>{children}</div>
     </section>
   );
 }
@@ -224,10 +253,10 @@ function Niveis({ lesson }: { lesson: LessonDetail }) {
   ] as const;
 
   return (
-    <section className="mt-8">
-      <div className="flex items-baseline justify-between border-b border-ink pb-1.5">
+    <section id="niveis" className="mt-8 scroll-mt-16">
+      <div className="flex items-baseline justify-between border-b border-texto pb-1.5">
         <h2 className="rotulo text-[12px]">Os três níveis</h2>
-        <span className="text-[13px] text-graphite">mesmo estímulo, três escalas</span>
+        <span className="text-[13px] text-texto-fraco">mesmo estímulo, três escalas</span>
       </div>
 
       <ul className="mt-3 space-y-3">
@@ -238,18 +267,28 @@ function Niveis({ lesson }: { lesson: LessonDetail }) {
           return (
             <li
               key={chave}
-              className={`p-4 ${referencia ? "border-2 border-ink" : "border border-line"}`}
+              className={`p-4 ${referencia ? "border-2 border-texto" : "border border-borda"}`}
             >
               <div>
                 <span className="block text-[15px] font-bold">
                   {nome}
                 </span>
-                <span className="mt-0.5 block text-[12px] leading-tight text-graphite">{resumo}</span>
+                <span className="mt-0.5 block text-[12px] leading-tight text-texto-fraco">{resumo}</span>
               </div>
               <dl className="mt-3 text-[14px]">
-                <Campo rotulo="Carga / distância" valor={nivel.carga} />
-                <Campo rotulo="Repetições" valor={nivel.repeticoes} />
-                <Campo rotulo="Alteração" valor={nivel.alteracao} ultimo />
+                <Campo
+                  rotulo="Carga / distância"
+                  valor={vincularMovimentos(nivel.carga, lesson.linkableMovements)}
+                />
+                <Campo
+                  rotulo="Repetições"
+                  valor={vincularMovimentos(nivel.repeticoes, lesson.linkableMovements)}
+                />
+                <Campo
+                  rotulo="Alteração"
+                  valor={vincularMovimentos(nivel.alteracao, lesson.linkableMovements)}
+                  ultimo
+                />
               </dl>
             </li>
           );
@@ -259,10 +298,18 @@ function Niveis({ lesson }: { lesson: LessonDetail }) {
   );
 }
 
-function Campo({ rotulo, valor, ultimo = false }: { rotulo: string; valor: string; ultimo?: boolean }) {
+function Campo({
+  rotulo,
+  valor,
+  ultimo = false,
+}: {
+  rotulo: string;
+  valor: React.ReactNode;
+  ultimo?: boolean;
+}) {
   return (
-    <div className={`flex gap-3 py-1.5 ${ultimo ? "" : "border-b border-line"}`}>
-      <dt className="w-[104px] shrink-0 text-[13px] text-graphite">{rotulo}</dt>
+    <div className={`flex gap-3 py-1.5 ${ultimo ? "" : "border-b border-borda"}`}>
+      <dt className="w-[104px] shrink-0 text-[13px] text-texto-fraco">{rotulo}</dt>
       <dd className="min-w-0 flex-1 leading-snug">{valor}</dd>
     </div>
   );
@@ -270,7 +317,7 @@ function Campo({ rotulo, valor, ultimo = false }: { rotulo: string; valor: strin
 
 function Nota({ titulo, texto, alerta = false }: { titulo: string; texto: string; alerta?: boolean }) {
   return (
-    <div className={`border-l-2 pl-4 ${alerta ? "border-rope" : "border-line"}`}>
+    <div className={`border-l-2 pl-4 ${alerta ? "border-rope" : "border-borda"}`}>
       <p className="rotulo text-[11px]">{titulo}</p>
       <p className="prose-coach mt-1">{texto}</p>
     </div>
