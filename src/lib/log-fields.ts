@@ -1,4 +1,4 @@
-import type { Lesson } from "./types";
+import type { Lesson, LessonLog } from "./types";
 
 /**
  * O que anotar muda por tipo de sessão. O livro pede uma coisa em cada um dos
@@ -51,6 +51,37 @@ const CAMPOS: Record<string, CampoRegisto[]> = {
 
 export function camposDoRegisto(lesson: Pick<Lesson, "session_type">): CampoRegisto[] {
   return CAMPOS[lesson.session_type ?? ""] ?? [];
+}
+
+/** Uma linha de leitura do registo: rótulo curto, valor, e a unidade à parte. */
+export type Marcado = { chave: string; rotulo: string; valor: string; unidade?: string };
+
+/**
+ * Transforma um registo guardado nas linhas que se leem. É o mesmo resumo no
+ * caderno do perfil e no bloco "da última vez" dentro da aula, para os dois
+ * nunca divergirem.
+ */
+export function resumoDoRegisto(
+  registo: Pick<LessonLog, "fields" | "level" | "rpe">,
+  lesson: Pick<Lesson, "session_type">,
+): Marcado[] {
+  const linhas: Marcado[] = camposDoRegisto(lesson)
+    .filter((campo) => registo.fields[campo.id])
+    .map((campo) => ({
+      chave: campo.id,
+      rotulo: campo.curto,
+      valor: registo.fields[campo.id],
+      unidade: campo.sufixo,
+    }));
+
+  if (registo.level) {
+    linhas.push({ chave: "nivel", rotulo: "Nível", valor: registo.level.toUpperCase() });
+  }
+  if (registo.rpe) {
+    linhas.push({ chave: "rpe", rotulo: "Esforço", valor: String(registo.rpe), unidade: "/ 10" });
+  }
+
+  return linhas;
 }
 
 /** Só guarda o que foi preenchido — campo vazio não vira chave no jsonb. */

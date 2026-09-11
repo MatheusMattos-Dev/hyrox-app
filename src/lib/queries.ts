@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { cookies } from "next/headers";
 import { createClient } from "./supabase/server";
 import { DEMO_COOKIE, isSupabaseConfigured } from "./supabase/config";
@@ -80,7 +81,7 @@ export async function getViewer(): Promise<Viewer | null> {
 }
 
 /** Ids das aulas concluídas pelo usuário atual. */
-async function getCompletedLessonIds(): Promise<Set<string>> {
+const getCompletedLessonIds = cache(async function getCompletedLessonIds(): Promise<Set<string>> {
   const supabase = await createClient();
 
   if (supabase) {
@@ -100,17 +101,17 @@ async function getCompletedLessonIds(): Promise<Set<string>> {
   }
 
   return readDemoProgress();
-}
+});
 
-async function fetchModules(): Promise<Module[]> {
+const fetchModules = cache(async function fetchModules(): Promise<Module[]> {
   const supabase = await createClient();
   if (!supabase) return sampleModules;
 
   const { data } = await supabase.from("modules").select("*").order("position");
   return (data as Module[] | null) ?? [];
-}
+});
 
-async function fetchLessons(): Promise<Lesson[]> {
+const fetchLessons = cache(async function fetchLessons(): Promise<Lesson[]> {
   const supabase = await createClient();
   if (!supabase) return sampleLessons;
 
@@ -121,7 +122,7 @@ async function fetchLessons(): Promise<Lesson[]> {
     .order("number");
 
   return (data as Lesson[] | null) ?? [];
-}
+});
 
 function withState(
   lessons: Lesson[],
@@ -239,9 +240,10 @@ export async function getLessonBySlug(slug: string): Promise<LessonDetail | null
   if (index === -1) return null;
 
   const lesson = lessons[index];
-  const [movements, log] = await Promise.all([
+  const [movements, log, previousLog] = await Promise.all([
     fetchLessonMovements(lesson),
     getLessonLog(lesson.id),
+    getPreviousLogForType(lesson.id, lesson.session_type),
   ]);
   const neighbour = (offset: number) => {
     const found = lessons[index + offset];
@@ -252,6 +254,7 @@ export async function getLessonBySlug(slug: string): Promise<LessonDetail | null
     ...lesson,
     movements,
     log,
+    previousLog,
     previous: neighbour(-1),
     next: neighbour(1),
   };
@@ -281,14 +284,37 @@ export async function getLessonLog(lessonId: string): Promise<LessonLog | null> 
   return (await readDemoLogs())[lessonId] ?? null;
 }
 
-/** Os registos mais recentes, do mais novo para o mais antigo. */
-export async function listRecentLogs(limite = 8): Promise<LogEntry[]> {
+/** Todos os registos do aluno, do mais novo para o mais antigo, já com a aula. */
+const listAllLogs = cache(async function listAllLogs(): Promise<LogEntry[]> {
   const supabase = await createClient();
   const lessons = await listLessons();
   const porId = new Map(lessons.map((lesson) => [lesson.id, lesson]));
 
-  const juntar = (registos: LessonLog[]): LogEntry[] =>
-    registos.flatMap((registo) => {
+  let registos: LessonLog[];
+
+  if (supabase) {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (user) {
+      const { data } = await supabase
+        .from("lesson_logs")
+        .select("lesson_id, performed_on, level, rpe, fields, notes")
+        .eq("user_id", user.id)
+        .order("performed_on", { ascending: false });
+
+      registos = (data as LessonLog[] | null) ?? [];
+    } else {
+      registos = [];
+    }
+  } else {
+    registos = Object.values(await readDemoLogs());
+  }
+
+  return registos
+    .sort((a, b) => b.performed_on.localeCompare(a.performed_on))
+    .flatMap((registo) => {
       const lesson = porId.get(registo.lesson_id);
       if (!lesson) return [];
       return [
@@ -303,29 +329,30 @@ export async function listRecentLogs(limite = 8): Promise<LogEntry[]> {
         },
       ];
     });
+});
 
-  if (supabase) {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
+/** Os registos mais recentes, do mais novo para o mais antigo. */
+export async function listRecentLogs(limite = 8): Promise<LogEntry[]> {
+  return (await listAllLogs()).slice(0, limite);
+}
 
-    if (user) {
-      const { data } = await supabase
-        .from("lesson_logs")
-        .select("lesson_id, performed_on, level, rpe, fields, notes")
-        .eq("user_id", user.id)
-        .order("performed_on", { ascending: false })
-        .limit(limite);
+/**
+ * O último registo de outra aula do mesmo tipo de sessão. É o que o aluno olha
+ * para decidir a carga de hoje: na força, a força da vez passada.
+ */
+export async function getPreviousLogForType(
+  lessonId: string,
+  sessionType: string | null,
+): Promise<LogEntry | null> {
+  if (!sessionType) return null;
 
-      return juntar((data as LessonLog[] | null) ?? []);
-    }
-  }
-
-  const demo = Object.values(await readDemoLogs()).sort((a, b) =>
-    b.performed_on.localeCompare(a.performed_on),
+  const registos = await listAllLogs();
+  return (
+    registos.find(
+      (registo) =>
+        registo.lesson_id !== lessonId && registo.lesson.session_type === sessionType,
+    ) ?? null
   );
-
-  return juntar(demo.slice(0, limite));
 }
 
 export type MovementFilters = { query?: string; category?: string };

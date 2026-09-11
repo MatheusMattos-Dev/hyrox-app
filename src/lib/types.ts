@@ -80,6 +80,11 @@ export type LessonLog = {
   notes: string | null;
 };
 
+/** Um registo com a aula a que pertence, para listar no perfil. */
+export type LogEntry = LessonLog & {
+  lesson: Pick<Lesson, "number" | "slug" | "title" | "session_type">;
+};
+
 export type LessonWithState = Lesson & {
   module: Pick<Module, "slug" | "title"> | null;
   completed: boolean;
@@ -88,6 +93,8 @@ export type LessonWithState = Lesson & {
 export type LessonDetail = LessonWithState & {
   movements: Movement[];
   log: LessonLog | null;
+  /** O registo mais recente de outra aula do mesmo tipo de sessão. */
+  previousLog: LogEntry | null;
   previous: Pick<Lesson, "number" | "slug" | "title"> | null;
   next: Pick<Lesson, "number" | "slug" | "title"> | null;
 };
@@ -97,10 +104,6 @@ export type CourseProgress = {
   completed: number;
 };
 
-/** Um registo com a aula a que pertence, para listar no perfil. */
-export type LogEntry = LessonLog & {
-  lesson: Pick<Lesson, "number" | "slug" | "title" | "session_type">;
-};
 
 export type Viewer = {
   id: string;

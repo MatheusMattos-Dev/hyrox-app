@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CompleteButton } from "@/components/CompleteButton";
 import { LessonMedia } from "@/components/LessonMedia";
 import { LogForm } from "@/components/LogForm";
+import { UltimoRegisto } from "@/components/UltimoRegisto";
 import { MovementMedia } from "@/components/MovementTile";
 import { capitalizar, capitalizarTitulo } from "@/lib/format";
 import { getLessonBySlug } from "@/lib/queries";
@@ -150,7 +151,13 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
         ) : null}
       </section>
 
-      <div className="mt-9">
+      {lesson.previousLog ? (
+        <div className="mt-9">
+          <UltimoRegisto entry={lesson.previousLog} />
+        </div>
+      ) : null}
+
+      <div className={lesson.previousLog ? "mt-4" : "mt-9"}>
         <LogForm lesson={lesson} />
       </div>
 

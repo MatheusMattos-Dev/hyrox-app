@@ -117,7 +117,9 @@ chega — e continua a servir de reserva depois.
   GIF certo aparecer dentro da aula.
 - **Registo** (`lesson_logs`) — o caderno de treino: um registo por aula, com o dia, o nível
   usado, o esforço no fim, as notas e os campos que aquela sessão pede. Guardar um registo
-  marca a aula como concluída. O que perguntar em cada tipo de sessão está em
+  marca a aula como concluída. Dentro da aula, o bloco *Da última vez* traz o registo mais
+  recente de outra aula do mesmo tipo de sessão — é com esse número que o aluno decide a
+  carga de hoje. O que perguntar em cada tipo de sessão está em
   [src/lib/log-fields.ts](src/lib/log-fields.ts) — as 250 aulas usam exatamente cinco frases
   de registo, uma por tipo, então o formulário pergunta campo a campo em vez de abrir uma
   caixa de texto.

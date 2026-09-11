@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { capitalizar, capitalizarTitulo } from "@/lib/format";
-import { camposDoRegisto } from "@/lib/log-fields";
+import { resumoDoRegisto } from "@/lib/log-fields";
 import type { LogEntry } from "@/lib/types";
 
 /**
@@ -12,21 +12,7 @@ export function LogList({ entries }: { entries: LogEntry[] }) {
   return (
     <ul>
       {entries.map((entry) => {
-        const marcados: Marcado[] = camposDoRegisto(entry.lesson)
-          .filter((campo) => entry.fields[campo.id])
-          .map((campo) => ({
-            chave: campo.id,
-            rotulo: campo.curto,
-            valor: entry.fields[campo.id],
-            unidade: campo.sufixo,
-          }));
-
-        if (entry.level) {
-          marcados.push({ chave: "nivel", rotulo: "Nível", valor: entry.level.toUpperCase() });
-        }
-        if (entry.rpe) {
-          marcados.push({ chave: "rpe", rotulo: "Esforço", valor: String(entry.rpe), unidade: "/ 10" });
-        }
+        const marcados = resumoDoRegisto(entry, entry.lesson);
 
         return (
           <li key={entry.lesson_id} className="border-b border-line py-5 last:border-0">
@@ -74,8 +60,6 @@ export function LogList({ entries }: { entries: LogEntry[] }) {
     </ul>
   );
 }
-
-type Marcado = { chave: string; rotulo: string; valor: string; unidade?: string };
 
 function formatarData(iso: string) {
   const [ano, mes, dia] = iso.split("-");
