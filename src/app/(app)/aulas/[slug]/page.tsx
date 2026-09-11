@@ -57,14 +57,21 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
           </h1>
         </div>
 
-        {lesson.session_type ? (
-          <Link
-            href={`/aulas?tipo=${encodeURIComponent(lesson.session_type)}`}
-            className="mt-4 inline-block border border-borda bg-superficie px-2.5 py-1 text-[12px] font-semibold text-texto-fraco underline underline-offset-4"
-          >
-            {capitalizar(lesson.session_type)}
-          </Link>
-        ) : null}
+        <div className="mt-4 flex flex-wrap items-center gap-2">
+          {lesson.session_type ? (
+            <Link
+              href={`/aulas?tipo=${encodeURIComponent(lesson.session_type)}`}
+              className="border border-borda bg-superficie px-2.5 py-1 text-[12px] font-semibold text-texto-fraco underline underline-offset-4"
+            >
+              {capitalizar(lesson.session_type)}
+            </Link>
+          ) : null}
+          {lesson.completed ? (
+            <span className="rotulo border border-ember px-2.5 py-1 text-[10px] text-ember">
+              Concluída
+            </span>
+          ) : null}
+        </div>
       </header>
 
       {lesson.deload ? (
@@ -97,9 +104,29 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
             </span>
           </Ficha>
         ) : null}
-        {lesson.equipment ? <Ficha rotulo="Equipamento">{lesson.equipment}</Ficha> : null}
-        {lesson.space ? <Ficha rotulo="Espaço">{lesson.space}</Ficha> : null}
       </dl>
+
+      {lesson.equipment || lesson.space ? (
+        <details className="border-b border-borda text-[14px]">
+          <summary className="cursor-pointer py-2.5 font-semibold marker:text-texto-fraco">
+            Equipamento e espaço
+          </summary>
+          <dl className="pb-3">
+            {lesson.equipment ? (
+              <div className="flex gap-4 py-1">
+                <dt className="w-[104px] shrink-0 text-[13px] text-texto-fraco">Equipamento</dt>
+                <dd className="min-w-0 flex-1">{lesson.equipment}</dd>
+              </div>
+            ) : null}
+            {lesson.space ? (
+              <div className="flex gap-4 py-1">
+                <dt className="w-[104px] shrink-0 text-[13px] text-texto-fraco">Espaço</dt>
+                <dd className="min-w-0 flex-1">{lesson.space}</dd>
+              </div>
+            ) : null}
+          </dl>
+        </details>
+      ) : null}
 
       {lesson.media_url ? (
         <div className="mt-6">
@@ -115,7 +142,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
             {lesson.warmup.map((item) => (
               <li
                 key={item}
-                className="border-b border-borda py-2.5 text-[15px] leading-snug last:border-0"
+                className="border-b border-borda py-2.5 text-[16px] leading-snug last:border-0"
               >
                 {item}
               </li>
@@ -170,7 +197,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
 
       {lesson.cooldown ? (
         <Bloco id="arrefecimento" titulo="Arrefecimento" minutos={MINUTOS.arrefecimento}>
-          <p className="text-[15px] leading-snug">{lesson.cooldown}</p>
+          <p className="text-[16px] leading-snug">{lesson.cooldown}</p>
         </Bloco>
       ) : null}
 
@@ -291,7 +318,7 @@ function Niveis({ lesson }: { lesson: LessonDetail }) {
                 </span>
                 <span className="mt-0.5 block text-[12px] leading-tight text-texto-fraco">{resumo}</span>
               </div>
-              <dl className="mt-3 text-[14px]">
+              <dl className="mt-3 text-[16px]">
                 <Campo
                   rotulo="Carga / distância"
                   valor={vincularMovimentos(nivel.carga, lesson.linkableMovements)}
@@ -325,7 +352,7 @@ function Campo({
 }) {
   return (
     <div className={`flex gap-3 py-1.5 ${ultimo ? "" : "border-b border-borda"}`}>
-      <dt className="w-[104px] shrink-0 text-[13px] text-texto-fraco">{rotulo}</dt>
+      <dt className="w-[104px] shrink-0 pt-0.5 text-[13px] text-texto-fraco">{rotulo}</dt>
       <dd className="min-w-0 flex-1 leading-snug">{valor}</dd>
     </div>
   );

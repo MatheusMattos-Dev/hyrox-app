@@ -62,6 +62,8 @@ export type Movement = {
   name: string;
   category: string | null;
   gif_url: string | null;
+  /** Quadro parado, usado na grade; a animação fica para a ficha. */
+  poster_url: string | null;
   description: string | null;
   cues: string[] | null;
   common_errors: string[] | null;

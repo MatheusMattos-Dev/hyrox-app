@@ -211,6 +211,44 @@ function defineRunners() {
       }
 
       console.log(`gifs: ${uploaded} de ${files.length} arquivos ligados aos movimentos.`);
+
+      // Os quadros parados, que a grade da biblioteca usa no lugar da animação.
+      const dirQuadros = path.join(dir, "quadros");
+      if (!existsSync(dirQuadros)) return;
+
+      const quadros = (await readdir(dirQuadros)).filter((file) => /\.webp$/i.test(file));
+      let comQuadro = 0;
+
+      for (const file of quadros) {
+        const slug = path.parse(file).name;
+        const body = await readFile(path.join(dirQuadros, file));
+        const objectPath = `movements/quadros/${file}`;
+
+        const { error } = await supabase.storage.from(BUCKET).upload(objectPath, body, {
+          contentType: contentTypeFor(file),
+          upsert: true,
+        });
+        if (error) {
+          console.error(`quadros: falha em ${file}: ${error.message}`);
+          continue;
+        }
+
+        const { data } = supabase.storage.from(BUCKET).getPublicUrl(objectPath);
+        const { error: updateError } = await supabase
+          .from("movements")
+          .update({ poster_url: data.publicUrl })
+          .eq("slug", slug);
+
+        if (updateError) {
+          // Contar zero em silêncio esconde a causa real, que costuma ser a
+          // migração 004 por rodar.
+          console.error(`quadros: subiu ${file}, mas não gravou: ${updateError.message}`);
+          continue;
+        }
+        comQuadro += 1;
+      }
+
+      console.log(`quadros: ${comQuadro} de ${quadros.length} ligados aos movimentos.`);
     },
   };
 }

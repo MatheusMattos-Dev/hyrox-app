@@ -20,8 +20,11 @@ const QUALIDADE = 70;
 
 // Os de aquecimento aparecem em miniatura e são muitos: pesam menos de propósito.
 const LARGURA_LEVE = 520;
+/** A grade mostra o movimento em ~170 px; o dobro chega para telas densas. */
+const LARGURA_QUADRO = 360;
 const QUALIDADE_LEVE = 58;
 const DESTINO = fileURLToPath(new URL("../data/gifs/", import.meta.url));
+const DESTINO_QUADROS = fileURLToPath(new URL("../data/gifs/quadros/", import.meta.url));
 
 /**
  * Cada movimento do curso e a execução escolhida para ele. O critério foi o
@@ -115,6 +118,7 @@ const catalogo = listar(raiz);
 console.log(`biblioteca: ${catalogo.length} GIFs em ${raiz}\n`);
 
 mkdirSync(DESTINO, { recursive: true });
+mkdirSync(DESTINO_QUADROS, { recursive: true });
 
 let totalAntes = 0;
 let totalDepois = 0;
@@ -136,6 +140,14 @@ for (const { slug, arquivo, leve } of ESCOLHAS) {
     .resize({ width: leve ? LARGURA_LEVE : LARGURA })
     .webp({ quality: leve ? QUALIDADE_LEVE : QUALIDADE, effort: 5 })
     .toFile(saida);
+
+  // O quadro do meio é onde o movimento está no ponto crítico — o primeiro
+  // costuma ser a posição de partida, que não diz nada.
+  const meta = await sharp(origem, { animated: true, limitInputPixels: false }).metadata();
+  await sharp(origem, { page: Math.floor((meta.pages ?? 1) / 2), limitInputPixels: false })
+    .resize({ width: LARGURA_QUADRO })
+    .webp({ quality: 72, effort: 5 })
+    .toFile(join(DESTINO_QUADROS, `${slug}.webp`));
 
   const antes = statSync(origem).size;
   const depois = statSync(saida).size;

@@ -55,6 +55,8 @@ export const sampleMovements: Movement[] = movementsJson.map((m) => ({
   name: m.name,
   category: m.category,
   gif_url: m.gif_url,
+  // No modo demonstração não há storage: a grade cai no desenho do app.
+  poster_url: null,
   description: m.description,
   cues: m.cues,
   common_errors: m.common_errors,

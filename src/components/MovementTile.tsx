@@ -5,7 +5,7 @@ import type { Movement } from "@/lib/types";
 export function MovementTile({ movement }: { movement: Movement }) {
   return (
     <Link href={`/movimentos/${movement.slug}`} className="group block">
-      <MovementMedia movement={movement} />
+      <MovementMedia movement={movement} parado />
       <p className="mt-2 text-[14px] font-semibold leading-tight text-texto">{movement.name}</p>
       {movement.category ? <p className="text-[12px] text-texto-fraco">{movement.category}</p> : null}
     </Link>
@@ -15,16 +15,21 @@ export function MovementTile({ movement }: { movement: Movement }) {
 export function MovementMedia({
   movement,
   className = "aspect-video",
+  parado = false,
 }: {
   movement: Movement;
   className?: string;
+  /** Em grade e em fila, o quadro parado: 45 animações de uma vez são 11 MB. */
+  parado?: boolean;
 }) {
-  if (movement.gif_url) {
+  const fonte = parado ? (movement.poster_url ?? movement.gif_url) : movement.gif_url;
+
+  if (fonte) {
     return (
       // O material é GIF/WebP animado: <img> mantém a animação sem otimização do Next.
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={movement.gif_url}
+        src={fonte}
         alt={`Execução do movimento ${movement.name}`}
         loading="lazy"
         className={`placa w-full rounded-panel bg-[#fcfbfc] object-cover ${className}`}

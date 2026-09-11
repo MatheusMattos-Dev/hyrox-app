@@ -32,7 +32,8 @@ o conteúdo real existir.
    **Project Settings → API**.
 
 Se o projeto já existia antes do caderno de treino, rode também
-`supabase/003-registo-do-treino.sql` no SQL Editor. É idempotente.
+`supabase/003-registo-do-treino.sql` e `supabase/004-quadro-do-movimento.sql` no
+SQL Editor. São idempotentes.
 
 Reinicie o `npm run dev`. A tela de entrada passa a mostrar o botão do Google, e qualquer conta
 Google entra no curso.

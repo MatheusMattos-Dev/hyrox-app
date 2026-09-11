@@ -15,7 +15,7 @@ export function RailDeMovimentos({ movements }: { movements: Movement[] }) {
       {movements.map((movement) => (
         <li key={movement.id} className="w-[124px] shrink-0">
           <Link href={`/movimentos/${movement.slug}`} className="block">
-            <MovementMedia movement={movement} />
+            <MovementMedia movement={movement} parado />
             <span className="mt-1.5 block text-[12px] font-semibold leading-tight">
               {movement.name}
             </span>

@@ -18,6 +18,7 @@ export default async function TodayPage() {
     : [];
 
   const firstName = viewer?.name?.split(" ")[0] ?? "Atleta";
+  const terminou = progress.total > 0 && progress.completed >= progress.total;
 
   return (
     <main className="px-5 pt-10">
@@ -40,7 +41,23 @@ export default async function TodayPage() {
         </div>
       </section>
 
-      {current ? (
+      {terminou ? (
+        <section className="mt-8">
+          <h2 className="rotulo text-[11px] text-texto-fraco">O ano fechou</h2>
+          <div className="mt-3 border border-line-ink bg-ink-2 p-5 text-paper">
+            <p className="display text-[56px] text-ember">{progress.total}</p>
+            <p className="mt-1 text-[15px] leading-snug text-paper/70">
+              aulas dadas, cinquenta semanas, dez mesociclos. O programa está completo.
+            </p>
+            <Link
+              href="/perfil"
+              className="rotulo mt-5 inline-block bg-ember px-4 py-2 text-[12px] text-ink"
+            >
+              Ver o caderno do ano
+            </Link>
+          </div>
+        </section>
+      ) : current ? (
         <section className="mt-8">
           <h2 className="rotulo text-[11px] text-texto-fraco">
             {progress.completed === 0 ? "Comece por aqui" : "Continuar de onde parou"}

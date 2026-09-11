@@ -157,6 +157,31 @@ export default async function LessonsPage({
             const doModulo = lessons.filter((lesson) => lesson.module?.slug === module.slug);
             if (doModulo.length === 0) return null;
 
+            // Só o mesociclo onde o aluno está vem aberto. Abrir os dez fazia
+            // uma página de 25 telas com 250 linhas de uma vez; os outros nove
+            // ficam numa linha que leva à lista filtrada.
+            const aberto = doModulo.some((lesson) => lesson.id === atual?.id);
+
+            if (!aberto) {
+              return (
+                <Link
+                  key={module.id}
+                  href={comFiltros({ bloco: module.slug })}
+                  className="mb-5 block"
+                >
+                  <span className="flex items-baseline justify-between">
+                    <span className="rotulo text-[12px] text-texto-fraco">{module.title}</span>
+                    <span className="tnum text-[13px] text-texto-fraco">
+                      {module.completed}/{module.total}
+                    </span>
+                  </span>
+                  <span className="mt-1.5 block">
+                    <ProgressRule completed={module.completed} total={module.total} />
+                  </span>
+                </Link>
+              );
+            }
+
             return (
               <section key={module.id} className="mb-8">
                 <div className="flex items-baseline justify-between border-b border-texto pb-1.5">

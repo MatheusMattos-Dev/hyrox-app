@@ -53,7 +53,7 @@ export default async function MovementPage({ params }: { params: Promise<{ slug:
               <li key={outro.slug}>
                 <Link href={`/movimentos/${outro.slug}`} className="flex items-start gap-4">
                   <span className="w-[124px] shrink-0">
-                    <MovementMedia movement={outro} />
+                    <MovementMedia movement={outro} parado />
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="rotulo block text-[10px] text-texto-fraco">{com}</span>

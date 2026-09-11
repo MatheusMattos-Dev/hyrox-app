@@ -27,7 +27,7 @@ export function BlocoPrincipal({ texto }: { texto: string }) {
               <span className="tnum w-5 shrink-0 text-[15px] font-semibold text-texto-fraco">
                 {pedaco.marca}
               </span>
-              <span className="min-w-0 flex-1 text-[15px] leading-snug">{pedaco.texto}</span>
+              <span className="min-w-0 flex-1 text-[17px] leading-snug">{pedaco.texto}</span>
             </p>
           );
         }
@@ -38,7 +38,7 @@ export function BlocoPrincipal({ texto }: { texto: string }) {
               <span aria-hidden="true" className="w-5 shrink-0 text-center text-texto-fraco">
                 ·
               </span>
-              <span className="min-w-0 flex-1 text-[15px] leading-snug">{pedaco.texto}</span>
+              <span className="min-w-0 flex-1 text-[17px] leading-snug">{pedaco.texto}</span>
             </p>
           );
         }

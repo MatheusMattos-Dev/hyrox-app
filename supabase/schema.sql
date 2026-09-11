@@ -90,6 +90,8 @@ create table if not exists public.movements (
   name text not null,
   category text,
   gif_url text,
+  -- Quadro parado, para a grade da biblioteca não servir 45 animações.
+  poster_url text,
   description text,
   cues text[],
   common_errors text[],
