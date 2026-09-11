@@ -85,6 +85,11 @@ export type LogEntry = LessonLog & {
   lesson: Pick<Lesson, "number" | "slug" | "title" | "session_type">;
 };
 
+/** Um movimento com as saídas para quem não tem o equipamento dele. */
+export type MovementDetail = Movement & {
+  alternativas: Array<{ movement: Movement; motivo: string }>;
+};
+
 export type LessonWithState = Lesson & {
   module: Pick<Module, "slug" | "title"> | null;
   completed: boolean;

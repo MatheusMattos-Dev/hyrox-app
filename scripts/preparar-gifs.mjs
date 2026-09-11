@@ -63,6 +63,19 @@ const ESCOLHAS = [
   { slug: "salto-a-corda", arquivo: "CARDIO/High-Jump-Rope-(male)", leve: true },
   { slug: "burpee-lento", arquivo: "BURPEE/Burpee_Cardio-FIX", leve: true },
   { slug: "skierg", arquivo: "Ski-Ergometer", leve: true },
+
+  // As alternativas por falta de equipamento. 100 das 250 aulas pedem trenó,
+  // sandbag, wall ball ou barra fixa — coisa que academia comum não tem.
+  { slug: "empurrar-placa", arquivo: "PESO/Plate-Push-(male)", leve: true },
+  { slug: "thruster-com-halteres", arquivo: "HALTERES/PERNA/Dumbbell-Thruster", leve: true },
+  { slug: "avanco-com-halteres", arquivo: "Dumbbell-Walking-Lunges", leve: true },
+  { slug: "bicicleta-de-assalto", arquivo: "Assault-Bike-Run", leve: true },
+  { slug: "agachamento-frontal-kettlebell", arquivo: "KETTLEBELL/PERNA/Kettlebell-Front-Squat", leve: true },
+  { slug: "terra-com-halteres", arquivo: "HALTERES/PERNA/Dumbbell-Deadlift", leve: true },
+  { slug: "desenvolvimento-com-halteres", arquivo: "Dumbbell-Standing-Palms-In-Press", leve: true },
+  { slug: "clean-com-kettlebell", arquivo: "Kettlebell-Clean-and-Press", leve: true },
+  { slug: "puxada-na-polia", arquivo: "Cable-Close-Grip-Front-Lat-Pulldown", leve: true },
+  { slug: "bicicleta-estatica", arquivo: "Stationary-Bike-Run", leve: true },
 ];
 
 /** Movimentos sem execução à altura. Ficam com o desenho do app. */

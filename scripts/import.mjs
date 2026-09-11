@@ -68,9 +68,10 @@ function defineRunners() {
       // à parte, num arquivo próprio, para o parser continuar fiel ao PDF.
       const doLivro = await readData("movements");
       const doAquecimento = (await readData("aquecimento")) ?? [];
+      const asAlternativas = (await readData("alternativas")) ?? [];
       if (!doLivro) return;
 
-      const rows = [...doLivro, ...doAquecimento];
+      const rows = [...doLivro, ...doAquecimento, ...asAlternativas];
       const payload = rows.map((row, index) => ({
         slug: row.slug,
         name: row.name,

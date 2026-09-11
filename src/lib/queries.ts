@@ -4,6 +4,7 @@ import { createClient } from "./supabase/server";
 import { DEMO_COOKIE, isSupabaseConfigured } from "./supabase/config";
 import { sampleLessons, sampleModules, sampleMovements, sampleMovementsForLesson } from "./sample-data";
 import { slugsDoAquecimento } from "./aquecimento";
+import { alternativasDe } from "./alternativas";
 import type {
   CourseProgress,
   Lesson,
@@ -13,6 +14,7 @@ import type {
   LogEntry,
   Module,
   Movement,
+  MovementDetail,
   Viewer,
 } from "./types";
 
@@ -431,9 +433,17 @@ export async function listMovementCategories(): Promise<string[]> {
   return [...new Set(movements.map((movement) => movement.category).filter(Boolean))] as string[];
 }
 
-export async function getMovementBySlug(slug: string): Promise<Movement | null> {
-  const movements = await listMovements();
-  return movements.find((movement) => movement.slug === slug) ?? null;
+export async function getMovementBySlug(slug: string): Promise<MovementDetail | null> {
+  const movements = await fetchMovements();
+  const movement = movements.find((atual) => atual.slug === slug);
+  if (!movement) return null;
+
+  const alternativas = alternativasDe(slug).flatMap(({ slug: outro, motivo }) => {
+    const encontrado = movements.find((atual) => atual.slug === outro);
+    return encontrado ? [{ movement: encontrado, motivo }] : [];
+  });
+
+  return { ...movement, alternativas };
 }
 
 export { isSupabaseConfigured };

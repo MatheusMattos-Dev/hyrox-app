@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "empurrar-placa",
+    "name": "Empurrar placa no chão",
+    "category": "Alternativa",
+    "substitui": "treno",
+    "motivo": "Sem trenó",
+    "description": "Uma placa no chão liso faz o trabalho do trenó: empurrar carga com o corpo em linha.",
+    "cues": ["Corpo em linha do calcanhar à cabeça", "Passada curta e frequente"]
+  },
+  {
+    "slug": "thruster-com-halteres",
+    "name": "Thruster com halteres",
+    "category": "Alternativa",
+    "substitui": "wall-ball",
+    "motivo": "Sem wall ball ou parede",
+    "description": "Mesmo gesto do wall ball sem o lançamento: agachar abaixo do paralelo e estender tudo de uma vez.",
+    "cues": ["Anca abaixo do paralelo", "Braços sobem com a extensão, não depois"]
+  },
+  {
+    "slug": "avanco-com-halteres",
+    "name": "Avanço com halteres",
+    "category": "Alternativa",
+    "substitui": "transporte-com-carga",
+    "motivo": "Sem sandbag",
+    "description": "A carga passa para as mãos em vez do ombro; o resto do padrão é o mesmo.",
+    "cues": ["Ombros para trás e para baixo", "Passada curta"]
+  },
+  {
+    "slug": "bicicleta-de-assalto",
+    "name": "Bicicleta de assalto",
+    "category": "Alternativa",
+    "substitui": "remo-skierg",
+    "motivo": "Sem ergómetro",
+    "description": "Não reproduz a puxada, mas entrega o mesmo estímulo de corpo inteiro.",
+    "cues": ["Braços e pernas no mesmo ritmo", "Cadência estável em vez de picos"]
+  },
+  {
+    "slug": "agachamento-frontal-kettlebell",
+    "name": "Agachamento frontal com kettlebell",
+    "category": "Alternativa",
+    "substitui": "agachamento",
+    "motivo": "Sem barra",
+    "description": "A carga à frente obriga o tronco a ficar alto — costuma ensinar o fundo melhor que a barra.",
+    "cues": ["Calcanhares no chão", "Cotovelos altos para o tronco não cair"]
+  },
+  {
+    "slug": "terra-com-halteres",
+    "name": "Levantamento terra com halteres",
+    "category": "Alternativa",
+    "substitui": "levantamento-terra",
+    "motivo": "Sem barra",
+    "description": "Mesma dobradiça de anca, com a carga ao lado do corpo em vez de à frente.",
+    "cues": ["Anca e ombros sobem juntos", "Halteres rentes à perna"]
+  },
+  {
+    "slug": "desenvolvimento-com-halteres",
+    "name": "Desenvolvimento com halteres",
+    "category": "Alternativa",
+    "substitui": "empurrar-vertical",
+    "motivo": "Sem barra",
+    "description": "Cada braço trabalha por si, o que expõe diferenças que a barra esconde.",
+    "cues": ["Sem flexão das pernas no press estrito", "Lombar não arqueia"]
+  },
+  {
+    "slug": "clean-com-kettlebell",
+    "name": "Clean com kettlebell",
+    "category": "Alternativa",
+    "substitui": "levantamento-tecnico",
+    "motivo": "Sem barra",
+    "description": "O mesmo tempo do levantamento técnico, com menos exigência de mobilidade de punho.",
+    "cues": ["Extensão da anca antes da ação dos braços", "Receber sem bater no antebraço"]
+  },
+  {
+    "slug": "puxada-na-polia",
+    "name": "Puxada na polia",
+    "category": "Alternativa",
+    "substitui": "puxada",
+    "motivo": "Sem barra fixa",
+    "description": "Permite carga abaixo do peso corporal, que é o que falta a quem ainda não faz a barra.",
+    "cues": ["Omoplata inicia o movimento", "Extensão completa em cima"]
+  },
+  {
+    "slug": "bicicleta-estatica",
+    "name": "Bicicleta estática",
+    "category": "Alternativa",
+    "substitui": "corrida",
+    "motivo": "Sem pista nem passadeira",
+    "description": "A alteração que o próprio livro indica para os dias de corrida.",
+    "cues": ["Cadência estável", "Resistência que permita manter o ritmo"]
+  }
+]

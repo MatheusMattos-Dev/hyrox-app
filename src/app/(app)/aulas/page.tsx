@@ -1,8 +1,14 @@
 import Link from "next/link";
 import { LessonRow } from "@/components/LessonRow";
 import { ProgressRule } from "@/components/ProgressRule";
-import { capitalizar } from "@/lib/format";
-import { listLessons, listModuleSummaries, listSessionTypes } from "@/lib/queries";
+import { capitalizar, capitalizarTitulo } from "@/lib/format";
+import {
+  getCurrentLesson,
+  listLessons,
+  listModuleSummaries,
+  listSessionTypes,
+} from "@/lib/queries";
+import type { LessonWithState } from "@/lib/types";
 
 export default async function LessonsPage({
   searchParams,
@@ -10,10 +16,11 @@ export default async function LessonsPage({
   searchParams: Promise<{ q?: string; bloco?: string; tipo?: string }>;
 }) {
   const { q, bloco, tipo } = await searchParams;
-  const [modules, tipos, lessons] = await Promise.all([
+  const [modules, tipos, lessons, atual] = await Promise.all([
     listModuleSummaries(),
     listSessionTypes(),
     listLessons({ query: q, moduleSlug: bloco, sessionType: tipo }),
+    getCurrentLesson(),
   ]);
 
   const filtering = Boolean(q?.trim() || bloco || tipo);
@@ -53,6 +60,34 @@ export default async function LessonsPage({
           {tipo ? <input type="hidden" name="tipo" value={tipo} /> : null}
         </form>
       </header>
+
+      {/* São 250 aulas numa página de vinte mil pixels: sem isto, quem está na
+          aula 137 tem de rolar 136 linhas para se encontrar. */}
+      {atual && !filtering ? (
+        <section className="mt-6 px-5">
+          <div className="flex items-baseline justify-between border-b border-texto pb-1.5">
+            <h2 className="rotulo text-[12px]">Onde você está</h2>
+            <a href="#aula-atual" className="text-[13px] font-semibold underline underline-offset-4">
+              Ver na lista
+            </a>
+          </div>
+          <Link href={`/aulas/${atual.slug}`} className="mt-3 flex items-start gap-4">
+            <span className="tnum shrink-0 bg-ember px-2.5 py-1 text-[14px] font-semibold text-ink">
+              {String(atual.number).padStart(3, "0")}
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-[16px] font-semibold leading-snug">
+                {capitalizarTitulo(atual.title)}
+              </span>
+              <span className="rotulo mt-1 block text-[10px] text-texto-fraco">
+                {atual.week ? `Semana ${String(atual.week).padStart(2, "0")}` : null}
+                {atual.weekday ? ` · ${capitalizar(atual.weekday)}` : null}
+                {atual.session_type ? ` · ${capitalizar(atual.session_type)}` : null}
+              </span>
+            </span>
+          </Link>
+        </section>
+      ) : null}
 
       <FiltroLinha rotulo="Tipo de sessão">
         <Chip href={comFiltros({ tipo: undefined })} label="Tudo" active={!tipo} />
@@ -109,13 +144,18 @@ export default async function LessonsPage({
         ) : filtering ? (
           <ul className="border-t border-borda">
             {lessons.map((lesson) => (
-              <LessonRow key={lesson.id} lesson={lesson} showModule={!bloco} />
+              <LessonRow
+                key={lesson.id}
+                lesson={lesson}
+                showModule={!bloco}
+                atual={lesson.id === atual?.id}
+              />
             ))}
           </ul>
         ) : (
           modules.map((module) => {
-            const moduleLessons = lessons.filter((lesson) => lesson.module?.slug === module.slug);
-            if (moduleLessons.length === 0) return null;
+            const doModulo = lessons.filter((lesson) => lesson.module?.slug === module.slug);
+            if (doModulo.length === 0) return null;
 
             return (
               <section key={module.id} className="mb-8">
@@ -125,11 +165,29 @@ export default async function LessonsPage({
                     {module.completed}/{module.total}
                   </span>
                 </div>
-                <ul>
-                  {moduleLessons.map((lesson) => (
-                    <LessonRow key={lesson.id} lesson={lesson} />
-                  ))}
-                </ul>
+
+                {/* A semana é a unidade que o aluno vive: cinco sessões de
+                    segunda a sexta. Sem ela, a lista é um rio de 250 linhas. */}
+                {agruparPorSemana(doModulo).map(([semana, daSemana]) => (
+                  <div key={semana} className="mt-4">
+                    <p className="rotulo flex items-baseline gap-2 text-[10px] text-texto-fraco">
+                      <span>Semana {String(semana).padStart(2, "0")}</span>
+                      {daSemana.some((lesson) => lesson.deload) ? (
+                        <span className="bg-rope px-1.5 py-0.5 text-ink">descarga</span>
+                      ) : null}
+                    </p>
+                    <ul className="mt-1.5">
+                      {daSemana.map((lesson) => (
+                        <LessonRow
+                          key={lesson.id}
+                          lesson={lesson}
+                          atual={lesson.id === atual?.id}
+                          dentroDaSemana
+                        />
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </section>
             );
           })
@@ -137,6 +195,20 @@ export default async function LessonsPage({
       </section>
     </main>
   );
+}
+
+/** As aulas de um mesociclo, em blocos de semana, na ordem do programa. */
+function agruparPorSemana(lessons: LessonWithState[]): Array<[number, LessonWithState[]]> {
+  const porSemana = new Map<number, LessonWithState[]>();
+
+  for (const lesson of lessons) {
+    const semana = lesson.week ?? 0;
+    const atual = porSemana.get(semana) ?? [];
+    atual.push(lesson);
+    porSemana.set(semana, atual);
+  }
+
+  return [...porSemana.entries()].sort((a, b) => a[0] - b[0]);
 }
 
 /** Uma fila de filtros, com o nome do que ela filtra à esquerda. */

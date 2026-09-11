@@ -43,6 +43,36 @@ export default async function MovementPage({ params }: { params: Promise<{ slug:
         </section>
       ) : null}
 
+      {movement.alternativas.length > 0 ? (
+        <section className="mt-8">
+          <h2 className="rotulo border-b border-texto pb-1.5 text-[12px]">
+            Não tem o equipamento?
+          </h2>
+          <ul className="mt-4 space-y-5">
+            {movement.alternativas.map(({ movement: outro, motivo }) => (
+              <li key={outro.slug}>
+                <Link href={`/movimentos/${outro.slug}`} className="flex items-start gap-4">
+                  <span className="w-[124px] shrink-0">
+                    <MovementMedia movement={outro} />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="rotulo block text-[10px] text-texto-fraco">{motivo}</span>
+                    <span className="mt-1 block text-[15px] font-semibold leading-snug">
+                      {outro.name}
+                    </span>
+                    {outro.description ? (
+                      <span className="mt-1 block text-[13px] leading-snug text-texto-fraco">
+                        {outro.description}
+                      </span>
+                    ) : null}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       {movement.common_errors?.length ? (
         <section className="mt-8">
           <h2 className="rotulo border-b border-texto pb-1.5 text-[12px]">
